@@ -1,24 +1,31 @@
-import './App.css'
+import './css/App.css'
 
+import NavBar from "./components/NavBar"
 import Home from "./pages/Home"
-import Post from "./components/Post"
+import Search from "./pages/Search"
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
   const loggedUser = 1;
 
   return (
-    /* This here is a 'fragment'. since jsx can't return a function with more than 1 'parent'. A placeholder actually. */
-    <>
+    <div className='container'>
+      <NavBar/>
+      <main className='main-content'>
+        <Routes>
+          <Route 
+            path='/' 
+            element={<Home/>}
+          />
+          <Route 
+            path='search' 
+            element={<Search/>}
+          />
 
-      {loggedUser === 0 ?(
-        <Post comentario={"Sebastiao"}></Post>
-      ) : (
-        <>
-          <Home/>
-        </>
-      )} 
-
-    </>
+        </Routes>
+      </main>
+    </div>
+    
   )
 }
 

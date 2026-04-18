@@ -19,3 +19,9 @@ on "HOW GOOD IS TO DEVELOP IN REACT", is it a incredible library? Does it makes 
 
 So, if I understood it right, the react library goes around "components" that are javascript functions with HTML code, which are rendered by the javascript in the web. 
 They're are awesome, so far the best thing on coding react. Very practicle, useful, easy to understand, I love it. Used to create for example the Posts and Comentaries and go rendering it again and again at the main page. Cool. But I hate the verbosity that javascript has, it annoyss me so much, really.
+
+
+### Useful links used
+
+#### Tech With Tim: Learn React With This ONE Project
+[https://www.youtube.com/watch?v=G6D9cBaLViA]

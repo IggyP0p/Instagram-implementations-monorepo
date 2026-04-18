@@ -1,14 +1,18 @@
 import Post from "../components/Post"
+import { useState } from "react"
 
 function Home() {
+    const [searchQuery, setSearchQuery] = useState("");
+
     const posts = [
         { id: 1, title: "Jonny"},
         { id: 2, title: "Lucas"},
         { id: 3, title: "Edgar"}
     ]
 
-    const handleSearch = () => {
-        alert("Searched")
+    const handleSearch = (e) => {
+        e.preventDefault()
+        alert(searchQuery)
     }
 
     return (
@@ -17,7 +21,13 @@ function Home() {
                 className="search-bar"
                 onSubmit={handleSearch}
             >
-                <input type="text" placeholder="Search" className="search-input"/>
+                <input 
+                    type="text" 
+                    placeholder="Search" 
+                    className="search-input"
+                    value={searchQuery}
+                    onInput={(e) => setSearchQuery(e.target.value)}
+                />
                 <button type="submit" className="search-button">Search</button>
             </form>
             <div className="sidebar">

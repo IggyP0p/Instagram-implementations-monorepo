@@ -1,0 +1,36 @@
+nav {
+    border: 1px #FFFFFF solid;
+    height: 100%; width: auto;
+    float: left;
+}
+
+.logo {
+    display: flex;
+    margin-bottom: 20%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+a {
+    font-size: 14pt;
+    
+    
+    text-decoration: none;
+    padding: 10px;
+    color: #FFFFFF;
+    transition-delay: all 0.3s;
+}
+
+a:hover {
+    border-radius: 8px;
+    background-color: #262626;
+}
