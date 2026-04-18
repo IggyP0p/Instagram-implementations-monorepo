@@ -1,3 +1,6 @@
+This project is for educational purposes. Therefore in each folder I explain how I implemented the Technologies.
+Also I leave some comentaries of what I find good or bad for each one.
+
 # Instagram clone Implementations Monorepo
 
 ## First Implementation
@@ -8,5 +11,3 @@
 
 ### To see further information go into the folder (Next + Django)
 
-
-This project is for educational purposes only and is not affiliated with Instagram.
