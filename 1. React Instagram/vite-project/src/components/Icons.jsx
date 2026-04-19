@@ -67,3 +67,14 @@ export function HeartIcon () {
         />
     )
 }
+
+export function CreateIcon () {
+    const [pressed, setPressed] = useState(false);
+
+    return (
+        <Plus
+            color="#ffffff"
+            fill="#0A0D14"
+        />
+    )
+}
