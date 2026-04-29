@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import "../css/NavBar.css";
 import { PlayButtonIcon, DirectIcon, SearchIcon, HeartIcon, CreateIcon } from "./Icons";
+import instagramLogo from "../assets/instagram.png";
 
 function NavButton ({ address, name, Icon }) {
     const [pressed, setPressed] = useState(false);
@@ -21,11 +22,18 @@ function NavButton ({ address, name, Icon }) {
 }
 
 function NavBar () {
-    const [active, isActive] = useState(null);
 
-    return <nav className="nav-bar">
+    return (
+    
+    <nav className="nav-bar">
         <div className="logo">
-            <Link to="/">Instagram</Link>
+            <Link to='/'>
+                <img
+                    src={instagramLogo}
+                    alt="Instagram"
+                    style={{ width: 56 }}
+                />
+            </Link>
         </div>
         <ul>
             <NavButton address='/' name='Homepage'/>
@@ -37,6 +45,8 @@ function NavBar () {
             <NavButton address='/' name='Profile'/>
         </ul>
     </nav>
+    
+    );
 }
 
 export default NavBar
