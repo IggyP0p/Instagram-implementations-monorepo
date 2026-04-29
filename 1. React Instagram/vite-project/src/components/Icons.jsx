@@ -1,19 +1,23 @@
 import { Home, Search, Send, Play, Square, Heart, Plus } from "lucide-react";
 import { useState } from "react";
 
-export function PlayButtonIcon () {
-    const [pressed, setPressed] = useState(false);
+export function PlayButtonIcon ({ pressed }) {
 
     return (
 
-        <div style={{width: 36, height: 36, display: "flex", alignItems: "center", justifyContent: "center"}}
-             onClick={() => setPressed(!pressed)}    
+        <div 
+            style={{
+                width: 36, height: 36,
+
+                display: "flex", 
+                alignItems: "center", 
+                justifyContent: "center"}}
         >
             <Square 
                 size={26}
                 color="#ffffff"
                 
-                fill={pressed ? "" : "#ffffff"}
+                fill={pressed ? "#ffffff" : "rgba(0, 0, 0, 0)" }
                 strokeWidth={2}
                 style={{
                     position: "absolute",
@@ -21,7 +25,7 @@ export function PlayButtonIcon () {
             />
             <Play
                 size={14}
-                color={pressed ? "#ffffff" : ""}
+                color={pressed ? "rgba(0, 0, 0, 0)" : "#ffffff" }
                 fill="#0A0D14"
                 strokeWidth={4}
                 style={{
@@ -35,13 +39,12 @@ export function PlayButtonIcon () {
 
 }
 
-export function DirectIcon () {
-    const [pressed, setPressed] = useState(false);
+export function DirectIcon ({ pressed }) {
 
     return (
         <Send
-            color="#ffffff"
-            fill="#0A0D14"
+            color={pressed ? "rgba(0, 0, 0, 0)" : "#ffffff"}
+            fill={pressed ? "#ffffff" : "rgba(0, 0, 0, 0)"}
         />
     )
 }

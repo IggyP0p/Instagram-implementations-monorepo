@@ -3,13 +3,17 @@ import { useState } from "react";
 import "../css/NavBar.css";
 import { PlayButtonIcon, DirectIcon, SearchIcon, HeartIcon, CreateIcon } from "./Icons";
 
-function NavButton ({address, name, Icon}) {
-    const [bold, setBold] = useState(false);
+function NavButton ({ address, name, Icon }) {
+    const [pressed, setPressed] = useState(false);
 
     return <li className="nav-button">
-        <Link to={address} onClick={() => setBold(!bold)} style={{ fontWeight: bold ? "bold" : "normal" }}>
+        <Link 
+            to={address} 
+            onClick={() => setPressed(!pressed)} 
+            style={{ fontWeight: pressed ? "bold" : "normal" }}
+        >
             {Icon && (
-                <Icon/>
+                <Icon pressed={ pressed } />
             )}
             {name}
         </Link>
@@ -17,6 +21,8 @@ function NavButton ({address, name, Icon}) {
 }
 
 function NavBar () {
+    const [active, isActive] = useState(null);
+
     return <nav className="nav-bar">
         <div className="logo">
             <Link to="/">Instagram</Link>
