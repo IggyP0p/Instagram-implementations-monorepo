@@ -1,7 +1,7 @@
 
 html, body {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0px 0px 0px 0px;
   padding: 0;
 }
 
@@ -10,3 +10,4 @@ body {
   padding: 5px;
   background-color: #0A0D14;
 }
+

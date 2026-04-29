@@ -1,10 +1,29 @@
 nav {
+    height: 100vh; width: 10px;
+}
+
+.nav-mask {
+    height: 100%; width: 60px;
+    overflow: hidden;
+    position: fixed;
+    background-color: #0A0D14;
+    transition: width 0.3s ease;
+}
+
+.nav-mask:hover {
+    width: 200px;
+}
+
+.nav-container {
     height: 100%; width: 200px;
     float: left;
+    display: flex;
+    flex-direction: column; 
+    
 }
 
 .logo {
-    width: 40px;
+    width: 16px;
     
 }
 
@@ -19,17 +38,16 @@ nav {
 ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 90% 0px 0px 0px;
 
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    gap: 10px;
 }
 
 li {
     display: block;
-    width: 100%;
+    width: 80%;
 }
 
 a {
@@ -40,10 +58,10 @@ a {
     width: 90%; height: 10%;
     
     text-decoration: none;
-    padding: 8px; margin: 4.5px;
+    padding: 18px;
     font-size: 12pt;
     color: #FFFFFF;
-    transition-delay: all 1s;
+    transition-delay: all 0.3s ease;
 }
 
 a:hover {

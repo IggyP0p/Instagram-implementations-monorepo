@@ -1,5 +1,18 @@
-import { Home, Search, Send, Play, Square, Heart, Plus } from "lucide-react";
+import { Search, Send, Play, Square, Heart, Plus, CircleUserRound } from "lucide-react";
+import Homepage from "../assets/casa.png"
+import HomepageBold from "../assets/casa2.png"
 import { useState } from "react";
+
+export function HomepageIcon ({ pressed }) {
+
+    return (
+        <img
+            src={pressed ? HomepageBold : Homepage}   
+            alt=""
+            style={{ width: 24 }}     
+        />
+    );
+}
 
 
 export function PlayButtonIcon ({ pressed }) {
@@ -8,11 +21,12 @@ export function PlayButtonIcon ({ pressed }) {
 
         <div 
             style={{
-                width: 36, height: 36,
+                width: 26, height: 26,
 
                 display: "flex", 
                 alignItems: "center", 
-                justifyContent: "center"}}
+                justifyContent: "center"
+            }}
         >
             <Square 
                 size={26}
@@ -21,7 +35,7 @@ export function PlayButtonIcon ({ pressed }) {
                 fill={pressed ? "#ffffff" : "rgba(0, 0, 0, 0)" }
                 strokeWidth={2}
                 style={{
-                    position: "absolute",
+                    position: "absolute"
                 }}
             />
             <Play
@@ -30,8 +44,7 @@ export function PlayButtonIcon ({ pressed }) {
                 fill="#0A0D14"
                 strokeWidth={4}
                 style={{
-                    position: "absolute",
-                    
+                    position: "absolute"
                 }}
             />
         </div>
@@ -51,34 +64,39 @@ export function DirectIcon ({ pressed }) {
 }
 
 export function SearchIcon () {
-    const [pressed, setPressed] = useState(false);
 
     return (
         <Search
             color="#ffffff"
-            fill="#0A0D14"
+            fill="rgba(0, 0, 0, 0)"
         />
     )
 }
 
 export function HeartIcon () {
-    const [pressed, setPressed] = useState(false);
 
     return (
         <Heart
+            color="#ffffff"
+            fill="rgba(0, 0, 0, 0)"
+        />
+    )
+}
+
+export function CreateIcon () {
+
+    return (
+        <Plus
             color="#ffffff"
             fill="#0A0D14"
         />
     )
 }
 
-export function CreateIcon () {
-    const [pressed, setPressed] = useState(false);
-
+export function DefaultUserIcon () {
     return (
-        <Plus
+        <CircleUserRound
             color="#ffffff"
-            fill="#0A0D14"
         />
     )
 }
