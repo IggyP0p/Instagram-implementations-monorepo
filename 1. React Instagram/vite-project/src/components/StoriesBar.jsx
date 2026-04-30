@@ -1,7 +1,7 @@
 import defaultImage from '../assets/defaultUser.png'
 import { useState } from "react";
 
-export function StoryCircle ({ image, name, size = 1 }) {
+export function StoryCircle ({ image, size = 1 }) {
 
     // chossing which will be the size of the Storycircle
     let currentSize;
@@ -54,16 +54,6 @@ export function StoryCircle ({ image, name, size = 1 }) {
                     />
                 </div>
             </div>
-
-            <h6
-                style={{
-                    color: 'white',
-                    textAlign: 'center',
-                    marginTop: '2px'
-                }}
-            >
-                {name}
-            </h6>
         </div>
     );
 }
@@ -80,15 +70,33 @@ export function StoriesBar () {
                 alignItems: 'center',
                 gap: '14.5px',
                 marginTop: '15px',
-                marginBottom: '40px'
+                marginBottom: '25px'
             }}
         >
-            <StoryCircle image={Image} name={'lorem'} size={2}/>
-            <StoryCircle image={Image} name={'ipsum'} size={2}/>
-            <StoryCircle image={Image} name={'lorem'} size={2}/>
-            <StoryCircle image={Image} name={'ipsum'} size={2}/>
-            <StoryCircle image={Image} name={'lorem'} size={2}/>
-            <StoryCircle image={Image} name={'ipsum'} size={2}/>
+            <div className='story-item'>
+                <StoryCircle image={Image} size={2}/>
+                <h6>lorem</h6>
+            </div>
+            <div className='story-item'>
+                <StoryCircle image={Image} size={2}/>
+                <h6>lorem</h6>
+            </div>
+            <div className='story-item'>
+                <StoryCircle image={Image} size={2}/>
+                <h6>lorem</h6>
+            </div>
+            <div className='story-item'>
+                <StoryCircle image={Image} size={2}/>
+                <h6>lorem</h6>
+            </div>
+            <div className='story-item'>
+                <StoryCircle image={Image} size={2}/>
+                <h6>lorem</h6>
+            </div>
+            <div className='story-item'>
+                <StoryCircle image={Image} size={2}/>
+                <h6>lorem</h6>
+            </div>
 
         </div>
     );

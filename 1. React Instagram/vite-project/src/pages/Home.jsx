@@ -6,7 +6,6 @@ import '../css/home.css'
 
 function Home() {
     
-    
     const [searchQuery, setSearchQuery] = useState("");
 
     const posts = [
@@ -14,11 +13,6 @@ function Home() {
         { id: 2, title: "Lucas"},
         { id: 3, title: "Edgar"}
     ]
-/* 
-    const handleSearch = (e) => {
-        e.preventDefault()
-        alert(searchQuery)
-    }*/
 
     return (
         <div className="home">
@@ -26,7 +20,7 @@ function Home() {
             
             <div className="posts-grid">
                 {posts.map((posts) => (
-                    <Post comentario={posts.title} key={posts.id}/>
+                    <Post name={posts.title} key={posts.id} time={"1h"} commentary={"lorem ipsum hasum ad ip dum asa volatile sumptum lorem ipsum hasum ad ip dum asa volatile sumptum lorem ipsum hasum ad ip dum asa volatile sumptum lorem ipsum hasum ad ip dum asa volatile sumptum"}/>
                 ))}
             </div>
             <div className="profiles-grid">

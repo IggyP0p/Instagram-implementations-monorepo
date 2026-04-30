@@ -29,7 +29,6 @@ nav {
 
 .logo a {
     padding: 3; margin: 20;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +38,6 @@ ul {
     list-style-type: none;
     padding: 0;
     margin: 80% 0px 0px 0px;
-
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -54,9 +52,7 @@ a {
     display: flex;
     align-items: center;
     gap: 20px;
-
     width: 90%; height: 10%;
-    
     text-decoration: none;
     padding: 18px;
     font-size: 12pt;

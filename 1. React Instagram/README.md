@@ -26,6 +26,9 @@ html and javascript is just like that. The problem is that react adds a layer, c
 the same time can make the code confusing sometimes. I just put in my mind that if the component need css to be design in that way independent of the page I use css on the .jsx
 but if the component only appears in one page I use css in the page.css, not the best way to organize things but It is a lil confunsing anyway I think.
 
+ALSO I DON'T KNOW WHY IS SO PROBLEMATIC TO FIND ICONS TO USE IN A SINGLE ARCHIVE TYPE. I had to use pngs, svgs, react components, URLs. Why? Therefore I gave up on getting all
+icons Instagram has in it interface.
+
 
 ### Useful links used
 
