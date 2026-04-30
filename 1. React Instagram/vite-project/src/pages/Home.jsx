@@ -1,4 +1,5 @@
 import Post from "../components/Post"
+import StoriesBar from "../components/StoriesBar"
 import { useState } from "react"
 
 function Home() {
@@ -17,6 +18,8 @@ function Home() {
 
     return (
         <div className="home">
+            <StoriesBar/>
+            
             <form 
                 className="search-bar"
                 onSubmit={handleSearch}

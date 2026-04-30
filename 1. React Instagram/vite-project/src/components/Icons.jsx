@@ -1,7 +1,6 @@
 import { Search, Send, Play, Square, Heart, Plus, CircleUserRound } from "lucide-react";
 import Homepage from "../assets/casa.png"
 import HomepageBold from "../assets/casa2.png"
-import { useState } from "react";
 
 export function HomepageIcon ({ pressed }) {
 
