@@ -1,0 +1,13 @@
+.post {
+    min-height: 600px; max-height: 800px;
+    width: 300px;
+
+    margin-bottom: 30px;
+    border: 1px solid white;
+}
+
+.post-image-frame {
+
+    overflow: hidden;
+    border: 1px solid white;
+}

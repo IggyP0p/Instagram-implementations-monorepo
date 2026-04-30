@@ -5,6 +5,13 @@ Also I leave some comentaries of what I find good or bad for each one.
 
 ## First Implementation
 
+- Frontend (React)
+- Database (LiteSQL)
+
+### To see further information go into the folder (React Instagram)
+
+## Second Implementation
+
 - Frontend (Next.js)
 - Backend (Django / FastAPI)
 - Database (PostgreSQL)

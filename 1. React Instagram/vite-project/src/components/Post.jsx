@@ -1,21 +1,28 @@
+import defaultImage from '../assets/defaultUser.png'
+import { StoryCircle } from "./StoriesBar";
 
-function Post({avatar, comentario}){
+function Post({avatar, comentario, postImage}){
 
     return (
         <div className="post">
-            <img src={avatar} alt="No image">
+            <div className='post-profile-frame'>
+                <StoryCircle name={'lorem'} size={1}/>
+            </div>
 
-            </img>
             <h3 className="post-title">
                 {comentario}
             </h3>
-            <img 
-                className="post-image"
-                onClick={onImageClick}
-                alt="No image"
-            >
 
-            </img>
+            <div className='post-image-frame'>
+                <img 
+                    className="post-image"
+                    onClick={onImageClick}
+                    src={postImage || defaultImage}
+                    alt="No image"
+                >
+
+                </img>
+            </div>
         </div>
     );
 

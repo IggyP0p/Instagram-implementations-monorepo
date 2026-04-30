@@ -20,6 +20,12 @@ on "HOW GOOD IS TO DEVELOP IN REACT", is it a incredible library? Does it makes 
 So, if I understood it right, the react library goes around "components" that are javascript functions with HTML code, which are rendered by the javascript in the web. 
 They're are awesome, so far the best thing on coding react. Very practicle, useful, easy to understand, I love it. Used to create for example the Posts and Comentaries and go rendering it again and again at the main page. Cool. But I hate the verbosity that javascript has, it annoyss me so much, really.
 
+The css was a lil bit confusing and troublesome. This design moment always get a little too working to me, cause it has so many nuances to work with, also too much code to make
+when working with css to style. so much display flex to add, I like working with css grid but I tried to make different this time and it is too much troublesome, but css with
+html and javascript is just like that. The problem is that react adds a layer, cause you can use css at the component in the own jsx page, and it opens so many possibilities at
+the same time can make the code confusing sometimes. I just put in my mind that if the component need css to be design in that way independent of the page I use css on the .jsx
+but if the component only appears in one page I use css in the page.css, not the best way to organize things but It is a lil confunsing anyway I think.
+
 
 ### Useful links used
 

@@ -1,8 +1,12 @@
 import Post from "../components/Post"
-import StoriesBar from "../components/StoriesBar"
+import { StoriesBar } from "../components/StoriesBar"
 import { useState } from "react"
 
+import '../css/home.css'
+
 function Home() {
+    
+    
     const [searchQuery, setSearchQuery] = useState("");
 
     const posts = [
@@ -10,35 +14,16 @@ function Home() {
         { id: 2, title: "Lucas"},
         { id: 3, title: "Edgar"}
     ]
-
+/* 
     const handleSearch = (e) => {
         e.preventDefault()
         alert(searchQuery)
-    }
+    }*/
 
     return (
         <div className="home">
             <StoriesBar/>
             
-            <form 
-                className="search-bar"
-                onSubmit={handleSearch}
-            >
-                <input 
-                    type="text" 
-                    placeholder="Search" 
-                    className="search-input"
-                    value={searchQuery}
-                    onInput={(e) => setSearchQuery(e.target.value)}
-                />
-                <button type="submit" className="search-button">Search</button>
-            </form>
-            <div className="sidebar">
-
-            </div>
-            <div className="stories-bar">
-
-            </div>
             <div className="posts-grid">
                 {posts.map((posts) => (
                     <Post comentario={posts.title} key={posts.id}/>

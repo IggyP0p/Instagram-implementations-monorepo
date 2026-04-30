@@ -1,16 +1,29 @@
 import defaultImage from '../assets/defaultUser.png'
 import { useState } from "react";
 
-function StoryCircle ({ image, name }) {
+export function StoryCircle ({ image, name, size = 1 }) {
+
+    // chossing which will be the size of the Storycircle
+    let currentSize;
+
+    switch (size) {
+        case 1:
+            currentSize = { ring: '34px', frame: '28px', image: '34px' };
+            break;
+        case 2:
+            currentSize = { ring: '88px', frame: '82px', image: '88px' };
+            break;
+    }
 
     return (
+
         <div
             className='story-container'
         >
             <div 
                 className='profile-ring'
                 style={{ 
-                        width: '90px', height: '90px', 
+                        width: currentSize.ring, height: currentSize.ring, 
                         background: 'linear-gradient(45deg, #fbc531, #eb4d4b 50%, #833ab4)',
                         borderRadius: '100%',
                         cursor: 'pointer',
@@ -23,7 +36,7 @@ function StoryCircle ({ image, name }) {
                 <div 
                     className='profile-frame'
                     style={{
-                        width: '86px', height: '86px',
+                        width: currentSize.frame, height: currentSize.frame,
                         overflow: 'hidden',
                         backgroundColor: '#0A0D14',
                         borderRadius: '100%',
@@ -36,7 +49,7 @@ function StoryCircle ({ image, name }) {
                     <img
                         src={image || defaultImage}
                         style={{ 
-                            width: '88px', height: '88px',
+                            width: currentSize.image, height: currentSize.image
                         }}
                     />
                 </div>
@@ -55,7 +68,7 @@ function StoryCircle ({ image, name }) {
     );
 }
 
-function StoriesBar () {
+export function StoriesBar () {
     const [Image, setImage] = useState()
     
     return (
@@ -65,20 +78,18 @@ function StoriesBar () {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                gap: '13.5px',
+                gap: '14.5px',
                 marginTop: '15px',
                 marginBottom: '40px'
             }}
         >
-            <StoryCircle image={Image} name={'lorem'}/>
-            <StoryCircle image={Image} name={'ipsum'}/>
-            <StoryCircle image={Image} name={'lorem'}/>
-            <StoryCircle image={Image} name={'ipsum'}/>
-            <StoryCircle image={Image} name={'lorem'}/>
-            <StoryCircle image={Image} name={'ipsum'}/>
+            <StoryCircle image={Image} name={'lorem'} size={2}/>
+            <StoryCircle image={Image} name={'ipsum'} size={2}/>
+            <StoryCircle image={Image} name={'lorem'} size={2}/>
+            <StoryCircle image={Image} name={'ipsum'} size={2}/>
+            <StoryCircle image={Image} name={'lorem'} size={2}/>
+            <StoryCircle image={Image} name={'ipsum'} size={2}/>
 
         </div>
     );
 }
-
-export default StoriesBar
