@@ -1,9 +1,10 @@
 import './css/App.css'
+import { Routes, Route } from 'react-router-dom'
 
 import NavBar from "./components/NavBar"
 import Home from "./pages/Home"
 import Search from "./pages/Search"
-import { Routes, Route } from 'react-router-dom'
+import Reels from "./pages/Reels"
 
 function App() {
   const loggedUser = 1;
@@ -20,6 +21,10 @@ function App() {
           <Route 
             path='/' 
             element={<Home/>}
+          />
+          <Route 
+            path='reels' 
+            element={<Reels/>}
           />
           <Route 
             path='search' 

@@ -1,0 +1,40 @@
+.reels-container {
+    width: auto; height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+
+.reels-info {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    margin-right: 40px;
+    font-size: 10pt;
+
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.profile-info h6 {
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+.profile-info h6 b {
+    color: blue;
+}
+
+.reels-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
