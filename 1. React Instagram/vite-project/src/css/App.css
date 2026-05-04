@@ -17,6 +17,7 @@ main {
 }
 
 
+/* --- Responsivity --- */
 @media (max-width: 1920px) {
   .container {
     width: 1920px; height: 100vh;

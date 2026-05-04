@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom'
 
 import NavBar from "./components/NavBar"
 import Home from "./pages/Home"
-import Search from "./pages/Search"
 import Reels from "./pages/Reels"
+import Direct from "./pages/Direct"
 
 function App() {
   const loggedUser = 1;
@@ -27,10 +27,9 @@ function App() {
             element={<Reels/>}
           />
           <Route 
-            path='search' 
-            element={<Search/>}
+            path='direct' 
+            element={<Direct/>}
           />
-
         </Routes>
       </main>
     </div>

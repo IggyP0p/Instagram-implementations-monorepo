@@ -1,0 +1,72 @@
+.direct-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1;
+
+    margin: 0px 0px 0px 60px;
+    width: 100%; height: 100%;
+}
+
+.contacts-container {
+    grid-column: 1/2;
+    grid-row: 1;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+
+    margin: 0px 0px 0px 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 16.5px 20px -10px 10px;
+}
+
+.info-container svg {
+    margin: 0px 10px 0px 0px;
+}
+
+.search-contacts-input {
+    width: 90%; height: 16px;
+    border-radius: 40px;
+
+    font-size: 11pt;
+    color: white;
+    padding: 15px;
+
+    border: none;
+    background-color: #262626;
+}
+
+.contacts-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+
+    margin: 0px 0px auto 0px;
+}
+
+.card-container:hover {
+    background-color: #262626;
+}
+
+.message-box {
+    grid-column: 2/3;
+    grid-row: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    
+    width: 100%; height: 100%;
+}
