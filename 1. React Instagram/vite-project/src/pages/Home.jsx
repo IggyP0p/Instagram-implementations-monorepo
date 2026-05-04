@@ -15,19 +15,22 @@ function Home() {
     ]
 
     return (
-        <div className="home">
-            <StoriesBar/>
-            
-            <div className="posts-grid">
-                {posts.map((posts) => (
-                    <Post name={posts.title} key={posts.id} time={"1h"} commentary={"lorem ipsum hasum ad ip dum asa volatile sumptum lorem ipsum hasum ad ip dum asa volatile sumptum lorem ipsum hasum ad ip dum asa volatile sumptum lorem ipsum hasum ad ip dum asa volatile sumptum"}/>
-                ))}
-            </div>
-            <div className="profiles-grid">
+        <div className="home-container">
+            <div className="home">
+                <StoriesBar/>
+                
+                <div className="posts-grid">
+                    {posts.map((posts) => (
+                        <Post name={posts.title} key={posts.id} time={"1h"} commentary={"lorem ipsum hasum ad ip dum asa volatile sumptum lorem ipsum hasum ad ip dum asa volatile sumptum lorem ipsum hasum ad ip dum asa volatile sumptum lorem ipsum hasum ad ip dum asa volatile sumptum"}/>
+                    ))}
+                </div>
+                <div className="profiles-grid">
+
+                </div>
 
             </div>
-
         </div>
+        
     )
 }
 

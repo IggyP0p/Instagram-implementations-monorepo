@@ -1,12 +1,12 @@
 html, body {
   box-sizing: border-box;
   margin: 0px 0px 0px 0px;
-  padding: 0;
+  padding: 0px;
 }
 
 body {
   height: 100%; width: 100%;
-  padding: 5px;
   background-color: #0A0D14;
+  overflow: hidden;
 }
 
