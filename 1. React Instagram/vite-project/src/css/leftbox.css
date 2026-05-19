@@ -1,0 +1,27 @@
+aside {
+    position: absolute;
+    height: 100%; width: 450px;
+    background-color: #0A0D14;
+    color: white;
+}
+
+.aside-container {
+    width: 90%; height: 90%;
+    margin: 50px 10px 20px 30px;
+}
+
+aside h3 {
+    font-size: 18pt;
+}
+
+aside input {
+    padding: 10px; border-radius: 20px;
+    width: 350px; height: auto;
+    border: none; font-size: 11.5pt;
+}
+
+.title-diff {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -27,8 +27,8 @@ function Reels () {
                     justifySelf: 'flex-end'
                 }}
             >
-                <button>Sobe</button>
-                <button>Desce</button>
+                <button className="btn-back">Sobe</button>
+                <button className="btn-next">Desce</button>
             </div>
 
         </div>

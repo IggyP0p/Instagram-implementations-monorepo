@@ -36,4 +36,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 30px;
+
+}
+
+.reels-btn button {
+    width: 80px; height: 80px;
+    padding: 20px;
+    border-radius: 100%;
+    cursor: pointer;
 }

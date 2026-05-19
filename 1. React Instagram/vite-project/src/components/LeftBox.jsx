@@ -1,24 +1,24 @@
+import { useEffect } from 'react'
+import '../css/leftbox.css'
+
 export function SearchPanel () {
 
-    return (
-        <aside>
-            <h3>Search</h3>
-            <input
-                placeholder="Search"
-                type="text"
-                style={{
-                    padding:'10px'
-                }}
-            />
-            <div className="title-dif">
-                <h4>Recents</h4>
-                <button>Clear search</button>
-            </div>
-            <div className="searches-container">
+    return <aside>
+            <div className="aside-container">
+                <h3>Search</h3>
+                <input
+                    placeholder="Search"
+                    type="text"
+                />
+                <div className="title-diff" >
+                    <h4>Recents</h4>
+                    <button>Clear search</button>
+                </div>
+                <div className="searches-container">
 
+                </div>
             </div>
         </aside>
-    )
 }
 
 export function NotifyPanel () {
