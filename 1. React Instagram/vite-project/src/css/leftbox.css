@@ -2,6 +2,7 @@ aside {
     position: absolute;
     height: 100%; width: 450px;
     background-color: #0A0D14;
+    border-right: 1px solid gray;
     color: white;
 }
 
@@ -24,4 +25,17 @@ aside input {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.title-diff button {
+    border: none;
+    background-color: none;
+    background: transparent;
+    color: blue;
+}
+
+.title-diff button:hover {
+    color: lightblue;
+    text-decoration-line: underline;
+    cursor: pointer;
 }
