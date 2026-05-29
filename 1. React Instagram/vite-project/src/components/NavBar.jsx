@@ -1,7 +1,7 @@
 import { HomepageIcon, PlayButtonIcon, DirectIcon, SearchIcon, HeartIcon, CreateIcon, DefaultUserIcon } from "./Icons";
 import instagramLogo from "../assets/instagram.png";
 import { Link, useLocation } from "react-router-dom";
-import { SearchPanel } from './LeftBox'
+import { OpenPanel } from './LeftBox'
 import { useState } from "react";
 import "../css/NavBar.css";
 
@@ -66,8 +66,7 @@ function NavBar () {
                 </div>
             </div>
             
-            {console.log(currentPanel)}
-            {currentPanel === "SearchPanel" && <SearchPanel onClose={() => setCurrentPanel(null)}/>}
+            {currentPanel === "SearchPanel" && <OpenPanel onClose={() => setCurrentPanel(null)} type={'search'}/>}
             
         </nav>
     
