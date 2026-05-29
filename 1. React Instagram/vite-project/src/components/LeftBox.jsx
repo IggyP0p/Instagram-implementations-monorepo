@@ -1,12 +1,31 @@
-import { useState, useRef, useEffectEvent } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { CloseButtonIcon } from './Icons'
 import '../css/leftbox.css'
 
 
 export function SearchPanel ({ onClose }) {
 
+    const teste = useRef(null)
 
-    return <aside>
+    useEffect(() => {
+        const closeOpenPanel = (e) =>{
+            if(teste.current && !teste.current.contains(e.target)){
+                onClose();
+            }
+        };
+
+        const time = setTimeout(() => {
+            document.addEventListener("click", closeOpenPanel);
+        }, 0);
+        
+        return () => {
+            clearTimeout(time);
+            document.removeEventListener("click", closeOpenPanel);
+            console.log("LIMPO")
+        };
+    }, [onClose]);
+
+    return <aside ref={teste}>
             <div 
                 className='close-btn-container'
                 onClick={onClose}
