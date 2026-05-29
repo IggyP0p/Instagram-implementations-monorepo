@@ -1,9 +1,19 @@
-import { useEffect } from 'react'
+import { useState } from 'react'
+import { CloseButtonIcon } from './Icons'
 import '../css/leftbox.css'
 
 export function SearchPanel () {
 
+    const [open, close] = useState();
+
     return <aside>
+            <div 
+                className='close-btn-container'
+                onClick={confirm("Feio")}
+            >
+                <CloseButtonIcon/>
+            </div>
+            
             <div className="aside-container">
                 <h3>Search</h3>
                 <input

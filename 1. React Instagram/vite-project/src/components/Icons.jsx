@@ -1,4 +1,4 @@
-import { Search, Send, Play, Square, Heart, Plus, CircleUserRound, MessageCircle, MessageSquarePlus } from "lucide-react";
+import { Search, Send, Play, Square, Heart, Plus, CircleUserRound, MessageCircle, MessageSquarePlus, X } from "lucide-react";
 import Homepage from "../assets/casa.png"
 import HomepageBold from "../assets/casa2.png"
 
@@ -114,6 +114,15 @@ export function MessageCircleIcon () {
 export function NewMessageIcon () {
     return (
         <MessageSquarePlus
+            color="#FFFFFF"
+            size={26}
+        />
+    )
+}
+
+export function CloseButtonIcon () {
+    return (
+        <X 
             color="#FFFFFF"
             size={26}
         />
