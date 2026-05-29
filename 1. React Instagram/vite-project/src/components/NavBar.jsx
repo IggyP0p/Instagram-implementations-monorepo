@@ -6,11 +6,12 @@ import { useState } from "react";
 import "../css/NavBar.css";
 
 
-function NavButton ({ address, name, Icon, isActive = false}) {
+function NavButton ({ address = '#', name, Icon, isActive = false, onClick}) {
 
     return <li className="nav-button">
         <Link 
             to={address} 
+            onClick={onClick}
             style={{ fontWeight: isActive ? "bold" : "normal" }}
         >
             {Icon && (
@@ -23,7 +24,7 @@ function NavButton ({ address, name, Icon, isActive = false}) {
 
 function NavBar () {
 
-    const [activePanel, setActivePanel] = useState(null)
+    const [currentPanel, setCurrentPanel] = useState(null)
 
     const location = useLocation()
     const currentRoute = location.pathname;
@@ -47,8 +48,17 @@ function NavBar () {
                         <NavButton address='/reels' name='Reels' Icon={PlayButtonIcon} isActive={currentRoute == '/reels'}/>
                         <NavButton address='/direct' name='Direct' Icon={DirectIcon} isActive={currentRoute == '/direct'}/>
 
-                        <NavButton onClick={() => setActivePanel('search')} name='Search' Icon={SearchIcon} />
-                        <NavButton onClick={() => alert({activePanel})} name='Likes' Icon={HeartIcon}/>
+                        <NavButton 
+                            name='Search' 
+                            Icon={SearchIcon} 
+                            onClick={() => setCurrentPanel("SearchPanel")}
+                        />
+
+                        <NavButton 
+                            name='Likes' 
+                            Icon={HeartIcon}
+                            onClick={() => setCurrentPanel("")} 
+                        />
 
                         <NavButton address='/create' name='Create' Icon={CreateIcon}/>
                         <NavButton address='/profile' name='Profile' Icon={DefaultUserIcon}/>
@@ -56,7 +66,8 @@ function NavBar () {
                 </div>
             </div>
             
-            {activePanel === 'search' && <SearchPanel command={true}/>}
+            {console.log(currentPanel)}
+            {currentPanel === "SearchPanel" && <SearchPanel onClose={() => setCurrentPanel(null)}/>}
             
         </nav>
     
