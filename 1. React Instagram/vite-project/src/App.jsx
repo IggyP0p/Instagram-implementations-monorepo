@@ -1,7 +1,6 @@
 import './css/App.css'
 import { Routes, Route } from 'react-router-dom'
 
-import { SearchPanel } from "./components/LeftBox"
 import NavBar from "./components/NavBar"
 import Home from "./pages/Home"
 import Reels from "./pages/Reels"
@@ -13,7 +12,6 @@ function App() {
   return (
     <div className='container'>
       <NavBar/>
-      <SearchPanel/>
       <main className='main-content'>
         <Routes>
           <Route 

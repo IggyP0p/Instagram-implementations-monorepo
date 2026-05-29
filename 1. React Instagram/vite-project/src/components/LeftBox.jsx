@@ -2,14 +2,19 @@ import { useState } from 'react'
 import { CloseButtonIcon } from './Icons'
 import '../css/leftbox.css'
 
-export function SearchPanel () {
 
-    const [open, close] = useState();
+export function SearchPanel (command = false) {
 
-    return <aside>
+    const [open, setOpen] = useState(command);
+
+    return <aside
+                style={{
+                    display: open ? "flex" : 'none'
+                }}
+            >
             <div 
                 className='close-btn-container'
-                onClick={confirm("Feio")}
+                onClick={() => setOpen(false)}
             >
                 <CloseButtonIcon/>
             </div>

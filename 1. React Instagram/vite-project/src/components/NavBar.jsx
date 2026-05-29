@@ -1,20 +1,20 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import "../css/NavBar.css";
 import { HomepageIcon, PlayButtonIcon, DirectIcon, SearchIcon, HeartIcon, CreateIcon, DefaultUserIcon } from "./Icons";
 import instagramLogo from "../assets/instagram.png";
+import { Link, useLocation } from "react-router-dom";
+import { SearchPanel } from './LeftBox'
+import { useState } from "react";
+import "../css/NavBar.css";
 
-function NavButton ({ address, name, Icon }) {
-    const [pressed, setPressed] = useState(false);
+
+function NavButton ({ address, name, Icon, isActive = false}) {
 
     return <li className="nav-button">
         <Link 
             to={address} 
-            onClick={() => setPressed(!pressed)} 
-            style={{ fontWeight: pressed ? "bold" : "normal" }}
+            style={{ fontWeight: isActive ? "bold" : "normal" }}
         >
             {Icon && (
-                <Icon pressed={ pressed } />
+                <Icon pressed={ isActive } />
             )}
             {name}
         </Link>
@@ -23,33 +23,42 @@ function NavButton ({ address, name, Icon }) {
 
 function NavBar () {
 
+    const [activePanel, setActivePanel] = useState(null)
+
+    const location = useLocation()
+    const currentRoute = location.pathname;
+
     return (
     
-    <nav className="nav-bar">
-        <div className="nav-mask">
-            <div className="nav-container">
-                <div className="logo">
-                    <Link to='/'>
-                        <img
-                            src={instagramLogo}
-                            alt="Instagram"
-                            style={{ width: 44 }}
-                        />
-                    </Link>
+        <nav className="nav-bar">
+            <div className="nav-mask">
+                <div className="nav-container">
+                    <div className="logo">
+                        <Link to='/'>
+                            <img
+                                src={instagramLogo}
+                                alt="Instagram"
+                                style={{ width: 44 }}
+                            />
+                        </Link>
+                    </div>
+                    <ul>
+                        <NavButton address='/' name='Homepage' Icon={HomepageIcon} isActive={currentRoute == '/'}/>
+                        <NavButton address='/reels' name='Reels' Icon={PlayButtonIcon} isActive={currentRoute == '/reels'}/>
+                        <NavButton address='/direct' name='Direct' Icon={DirectIcon} isActive={currentRoute == '/direct'}/>
+
+                        <NavButton onClick={() => setActivePanel('search')} name='Search' Icon={SearchIcon} />
+                        <NavButton onClick={() => alert({activePanel})} name='Likes' Icon={HeartIcon}/>
+
+                        <NavButton address='/create' name='Create' Icon={CreateIcon}/>
+                        <NavButton address='/profile' name='Profile' Icon={DefaultUserIcon}/>
+                    </ul>
                 </div>
-                <ul>
-                    <NavButton address='/' name='Homepage' Icon={HomepageIcon}/>
-                    <NavButton address='/reels' name='Reels' Icon={PlayButtonIcon}/>
-                    <NavButton address='/direct' name='Direct' Icon={DirectIcon}/>
-                    <NavButton address='/' name='Search' Icon={SearchIcon}/>
-                    <NavButton address='/' name='Likes' Icon={HeartIcon}/>
-                    <NavButton address='/create' name='Create' Icon={CreateIcon}/>
-                    <NavButton address='/profile' name='Profile' Icon={DefaultUserIcon}/>
-                </ul>
             </div>
-        </div>
-        
-    </nav>
+            
+            {activePanel === 'search' && <SearchPanel command={true}/>}
+            
+        </nav>
     
     );
 }
