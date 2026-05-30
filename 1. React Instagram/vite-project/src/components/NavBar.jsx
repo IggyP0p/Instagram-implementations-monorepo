@@ -1,7 +1,7 @@
 import { HomepageIcon, PlayButtonIcon, DirectIcon, SearchIcon, HeartIcon, CreateIcon, DefaultUserIcon } from "./Icons";
 import instagramLogo from "../assets/instagram.png";
 import { Link, useLocation } from "react-router-dom";
-import { OpenPanel } from './LeftBox'
+import OpenPanel from './LeftBox';
 import { useState } from "react";
 import "../css/NavBar.css";
 
@@ -57,7 +57,7 @@ function NavBar () {
                         <NavButton 
                             name='Likes' 
                             Icon={HeartIcon}
-                            onClick={() => setCurrentPanel("")} 
+                            onClick={() => setCurrentPanel("NotifyPanel")} 
                         />
 
                         <NavButton address='/create' name='Create' Icon={CreateIcon}/>
@@ -67,6 +67,7 @@ function NavBar () {
             </div>
             
             {currentPanel === "SearchPanel" && <OpenPanel onClose={() => setCurrentPanel(null)} type={'search'}/>}
+            {currentPanel === "NotifyPanel" && <OpenPanel onClose={() => setCurrentPanel(null)} type={'notify'}/>}
             
         </nav>
     

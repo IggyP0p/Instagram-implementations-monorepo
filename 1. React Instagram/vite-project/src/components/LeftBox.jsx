@@ -97,3 +97,5 @@ export function OpenPanel ({ onClose, type }) {
             
         </aside>
 }
+
+export default OpenPanel

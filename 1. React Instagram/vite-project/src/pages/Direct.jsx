@@ -1,4 +1,3 @@
-
 import { NewMessageIcon } from "../components/Icons"
 import ChatCard from "../components/ChatCard"
 import "../css/direct.css"

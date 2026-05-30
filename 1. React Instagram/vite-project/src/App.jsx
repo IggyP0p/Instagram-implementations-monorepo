@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar"
 import Home from "./pages/Home"
 import Reels from "./pages/Reels"
 import Direct from "./pages/Direct"
+import Profile from "./pages/Profile"
 
 function App() {
   const loggedUser = 1;
@@ -29,6 +30,10 @@ function App() {
           <Route 
             path='direct' 
             element={<Direct/>}
+          />
+          <Route
+            path='profile'
+            element={<Profile/>}
           />
         </Routes>
       </main>
