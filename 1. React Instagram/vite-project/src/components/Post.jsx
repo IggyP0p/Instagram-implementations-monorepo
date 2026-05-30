@@ -2,6 +2,7 @@ import defaultImage from '../assets/Error404.png';
 import { HeartIcon, MessageCircleIcon, DirectIcon } from './Icons'
 import { StoryCircle } from "./StoriesBar";
 
+
 function Post({avatar, name, time, commentary, postImage, likesNumber = 0, CommentsNumber = 0}){
 
     return (

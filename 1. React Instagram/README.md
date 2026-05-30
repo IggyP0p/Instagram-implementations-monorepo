@@ -29,6 +29,9 @@ but if the component only appears in one page I use css in the page.css, not the
 ALSO I DON'T KNOW WHY IS SO PROBLEMATIC TO FIND ICONS TO USE IN A SINGLE ARCHIVE TYPE. I had to use pngs, svgs, react components, URLs. Why? Therefore I gave up on getting all
 icons Instagram has in it interface.
 
+At some point I realized I could create the most basic component of a structure I would use and then create other functions for this component to
+another necessities. Like the Image in the profile page and the Images in the Home page, but at this moment I would need to refactorate some of the
+code and I was lazy so I created 2 versions of the same image  frame for 2 differents purposes
 
 ### Useful links used
 
