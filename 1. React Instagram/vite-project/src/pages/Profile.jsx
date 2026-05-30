@@ -1,4 +1,5 @@
 import "../css/profile.css"
+import Footer from "../components/Footer"
 import ImageFrame from "../components/ImageFrame"
 import defaultProfilePic from "../assets/defaultUser.png"
 
@@ -6,7 +7,7 @@ function Profile(profilepic, accountName = "Teste", username = "Default da Silva
     return(
         <div className="profile-container">
 
-            <div className="profile-info">
+            <div className="profile-page-info">
                 <div className="profile-pic-mold">
                     <img src={profilepic || defaultProfilePic}/>
                 </div>
@@ -34,9 +35,7 @@ function Profile(profilepic, accountName = "Teste", username = "Default da Silva
                 
             </div>
 
-            <footer>
-                
-            </footer>
+            <Footer/>
         </div>
     )
 }

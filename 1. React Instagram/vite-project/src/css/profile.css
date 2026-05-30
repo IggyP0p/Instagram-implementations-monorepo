@@ -9,12 +9,13 @@
     scrollbar-width: none;
 }
 
-.profile-info {
+.profile-page-info {
     margin-top: 50px;
     gap: 50px;
     width: 670px; height: auto;
 
-    align-self: center; /* For some reason This div only centralizes itself this way the father div command doesnt work */
+    display: flex;
+    flex-direction: row;
 }
 
 .profile-pic-mold {

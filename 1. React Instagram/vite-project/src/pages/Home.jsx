@@ -1,5 +1,6 @@
 import Post from "../components/Post"
 import { StoriesBar } from "../components/StoriesBar"
+import Footer from "../components/Footer"
 import { useState } from "react"
 
 import '../css/home.css'
@@ -29,6 +30,8 @@ function Home() {
                 </div>
 
             </div>
+
+            <Footer/>
         </div>
         
     )
