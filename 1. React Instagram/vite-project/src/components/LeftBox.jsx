@@ -25,10 +25,6 @@ function NotifyPanel (){
     return (
         <div className="aside-container">
             <h3>Notifications</h3>
-            <input
-                placeholder="Notifications"
-                type="text"
-            />
             <div className="title-diff" >
                 <h4>Recents</h4>
                 <button>Clear search</button>
