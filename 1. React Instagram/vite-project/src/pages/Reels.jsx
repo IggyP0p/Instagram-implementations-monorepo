@@ -1,5 +1,6 @@
 import ReelsFrame from "../components/ReelsFrame"
 import defaultProfilePic from '../assets/defaultUser.png'
+import { ChevronUp, ChevronDown } from "lucide-react";
 import "../css/reels.css"
 
 function Reels () {
@@ -27,8 +28,12 @@ function Reels () {
                     justifySelf: 'flex-end'
                 }}
             >
-                <button className="btn-back">Sobe</button>
-                <button className="btn-next">Desce</button>
+                <button className="btn-back">
+                    <ChevronUp/>
+                </button>
+                <button className="btn-next">
+                    <ChevronDown/>
+                </button>
             </div>
 
         </div>

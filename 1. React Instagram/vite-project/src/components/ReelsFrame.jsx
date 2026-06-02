@@ -35,7 +35,7 @@ function ReelsFrame () {
                 style={{
                     display:'flex',
                     flexDirection: 'column',
-                    margin: '70% 0px 0px 0px',
+                    margin: '70% 0px 50px 0px',
                     gap: '30px'
                 }}
             >

@@ -1,4 +1,4 @@
-import { Search, Send, Play, Square, Heart, Plus, CircleUserRound, MessageCircle, MessageSquarePlus, X } from "lucide-react";
+import { Search, Send, Play, Square, Heart, Plus, CircleUserRound, MessageCircle, MessageSquarePlus, X, ChevronUp } from "lucide-react";
 import Homepage from "../assets/casa.png"
 import HomepageBold from "../assets/casa2.png"
 
@@ -125,6 +125,20 @@ export function CloseButtonIcon () {
         <X 
             color="#FFFFFF"
             size={26}
+        />
+    )
+}
+
+export function ReelsUp () {
+    return (
+        <ChevronUp/>
+    )
+}
+
+export function ReelsDown () {
+    return (
+        <ChevronUp
+            style={{ transform: "rotate(180deg)"}}
         />
     )
 }
