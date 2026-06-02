@@ -6,7 +6,8 @@ Also I leave some comentaries of what I find good or bad for each one.
 ## First Implementation
 
 - Frontend (React)
-- Database (LiteSQL)
+- Backend (Express.js)
+- Database (?)
 
 ### To see further information go into the folder (React Instagram)
 
