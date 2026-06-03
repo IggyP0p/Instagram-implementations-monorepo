@@ -7,7 +7,7 @@ Also I leave some comentaries of what I find good or bad for each one.
 
 - Frontend (React)
 - Backend (Express.js)
-- Database (?)
+- Database (MongoDB)
 
 ### To see further information go into the folder (React Instagram)
 
