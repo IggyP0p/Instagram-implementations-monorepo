@@ -5,8 +5,14 @@
 ### React website
 [https://react.dev/]
 
-#### Tech With Tim: Learn React With This ONE Project
+### Tech With Tim: Learn React With This ONE Project
 [https://www.youtube.com/watch?v=G6D9cBaLViA]
+
+### Express framework
+[https://expressjs.com/en/]
+
+### MongoDB node driver
+[https://www.mongodb.com/pt-br/docs/drivers/node/current/]
 
 
 ## My way on learning React and my thoughts
