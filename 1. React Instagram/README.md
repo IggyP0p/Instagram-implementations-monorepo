@@ -1,18 +1,24 @@
 # React implementation of Instagram clone UI
 
+
 ## Useful links used
 
-### React website
-[https://react.dev/]
+[React website](https://react.dev/)
 
-### Tech With Tim: Learn React With This ONE Project
-[https://www.youtube.com/watch?v=G6D9cBaLViA]
+[Tech With Tim: Learn React With This ONE Project](https://www.youtube.com/watch?v=G6D9cBaLViA)
 
-### Express framework
-[https://expressjs.com/en/]
+[Express framework](https://expressjs.com/en/)
 
-### MongoDB node driver
-[https://www.mongodb.com/pt-br/docs/drivers/node/current/]
+[MongoDB node driver](https://www.mongodb.com/pt-br/docs/drivers/node/current/)
+
+
+## My Objectives
+
+- [X] Create React Interface
+- [X] Implement Express.js backend
+- [X] Connect with mongoDB
+- [ ] Connect with imagesDB
+- [ ] Use Express API to connect React frontend with Express Backend
 
 
 ## My way on learning React and my thoughts
