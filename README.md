@@ -5,17 +5,17 @@ Also I leave some comentaries of what I find good or bad for each one.
 
 ## First Implementation
 
-- Frontend (React)
-- Backend (Express.js)
-- Database (MongoDB)
+- Frontend (_React_)
+- Backend (_Express.js_)
+- Database (_MongoDB Atlas_)
 
 ### To see further information go into the folder (React Instagram)
 
 ## Second Implementation
 
-- Frontend (Next.js)
-- Backend (Django / FastAPI)
-- Database (PostgreSQL)
+- Frontend (_Next.js_)
+- Backend (_Django / FastAPI_)
+- Database (_PostgreSQL_)
 
 ### To see further information go into the folder (Next + Django)
 
