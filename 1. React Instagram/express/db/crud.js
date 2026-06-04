@@ -1,15 +1,13 @@
 import connect from "./conn.js";
 
-export const create = async (colection) => {
+export const create = async (colection, doc) => {
    
     const db = await connect();
 
     const myColl = db.collection(colection);
-
-    const result = await myColl.insertOne({
-        nome: "João",
-        idade: 25
-    });
+    
+    doc.createdAt = new Date();
+    const result = await myColl.insertOne(doc);
 
     console.log(`A document was inserted ${result.insertedId}`);
 };
