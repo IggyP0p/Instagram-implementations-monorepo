@@ -1,4 +1,4 @@
-import { insertStories } from "../models/mongodb/storiesModel";
+import { insertStories } from "../models/mongodb/storiesModel.js";
 
 export const createStory = async (req, res) => {
     try {
