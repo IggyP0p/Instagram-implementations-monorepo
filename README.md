@@ -12,7 +12,7 @@ Also I leave some comentaries of what I find good or bad for each one.
 - Backend (_Express.js_)
 - Database (_MongoDB Atlas_)
 
-### To see further information go into the folder [REACT Instagram](./1.%20React%20Instagram/)
+To see further information go into the folder [REACT Instagram](./1.%20React%20Instagram/)
 
 ## Second Implementation
 
