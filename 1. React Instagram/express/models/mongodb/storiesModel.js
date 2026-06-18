@@ -1,4 +1,4 @@
-import connect from "../../config/mongodb";
+import connect from "../../config/mongodb.js"
 
 export const insertStories = async (data) => {
     const db = await connect();

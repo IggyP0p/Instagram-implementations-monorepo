@@ -2,7 +2,9 @@ import { insertPost } from "../models/mongodb/postModel.js";
 
 export const createPost = async (req, res) => {
     try {
-        const { authorID, caption, media } = req.body;
+        const { authorID, caption, mediaType, mediaUrl } = req.body;
+
+        media = [mediaType, mediaUrl]
 
         const newPostData = {
             authorID,
