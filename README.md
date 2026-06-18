@@ -20,5 +20,5 @@ To see further information go into the folder [REACT Instagram](./1.%20React%20I
 - Backend (_Django / FastAPI_)
 - Database (_PostgreSQL_)
 
-### To see further information go into the folder [Next + Django](./2.%20Next%20+%20Django/)
+To see further information go into the folder [Next + Django](./2.%20Next%20+%20Django/)
 
