@@ -1,4 +1,5 @@
 import express from "express";
+
 import userRoutes from "./routes/userRoutes.js";
 import storiesRoutes from "./routes/storiesRoutes.js";
 import postRoutes from "./routes/postRoutes.js";
@@ -12,15 +13,13 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/api', userRoutes);
-app.use('/api', storiesRoutes);
-app.use('/api', postRoutes);
-app.use('/api', postLikesRoutes);
-app.use('/api', messagesRoutes);
-app.use('/api', followsRoutes);
-app.use('/api', conversationsRoutes);
-app.use('/api', commentRoutes);
+app.use("/api", userRoutes);
+app.use("/api", storiesRoutes);
+app.use("/api", postRoutes);
+app.use("/api", postLikesRoutes);
+app.use("/api", messagesRoutes);
+app.use("/api", followsRoutes);
+app.use("/api", conversationsRoutes);
+app.use("/api", commentRoutes);
 
-app.listen(3000, () => {
-    console.log("App running on port 3000");
-});
+export default app;
