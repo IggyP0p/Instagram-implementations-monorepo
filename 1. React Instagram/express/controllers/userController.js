@@ -29,11 +29,15 @@ const userController = {
 
     async findById(req, res) {
         try {
-            const { id } = req.body;
+            const { id } = req.params;
 
-            const user = await findUser(id);
+            const user = await userModel.getUser(id);
 
-            return res.status(201).json(user)
+            if (!user) {
+                return res.status(404).json({ message: "User not found" });
+            }
+
+            return res.json(user)
         } catch (error) {
             return res.status(500).json({ error: error.message });
 
