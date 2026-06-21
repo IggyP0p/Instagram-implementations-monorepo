@@ -28,6 +28,23 @@ const userController = {
         }
     },
 
+    async login(req, res) {
+        try {
+            const { username, password } = req.body;
+
+            const userData = {
+                username,
+                password
+            }
+
+            const user = await userModel.loggingUser(userData);
+
+            return res.status(201).json(user);
+        } catch (error) {
+            return res.status(500).json({ error: error.message });
+        }
+    },
+
     async findById(req, res) {
         try {
             const { id } = req.params;
@@ -84,6 +101,40 @@ const userController = {
         } catch (error) {
             return res.status(500).json({ error: error.message });
 
+        }
+    },
+
+    async activate(req, res) {
+        try {
+            const { id } = req.params;
+
+            const user = await userModel.activateUser(id);
+
+            if (!user) {
+                return res.status(404).json({ message: "User not found" });
+            }
+
+            return res.json(user);
+        } catch (error) {
+            return res.status(500).json({ error: error.message });
+
+        }
+    },
+
+    async delete(req, res) {
+        try {
+            const { id } = req.params;
+
+            const user = await userModel.deleteUser(id);
+
+            if (!user) {
+                return res.status(404).json({ message: "User not found" });
+            }
+
+            return res.json(user);
+        } catch (error) {
+            return res.status(500).json({ error: error.message });
+            
         }
     }
 

@@ -10,6 +10,13 @@ const userModel = {
         return { _id: result.insertedId, ...userData};
     },
 
+    async loggingUser(userData) {
+        const db = await connect();
+        const result = await db.collection('usuarios').findOne(userData);
+
+        return result;
+    },
+
     async getUser(userData) {
         const db = await connect();
         const result = await db.collection('usuarios').findOne(
@@ -47,6 +54,27 @@ const userModel = {
         const result = await db.collection('usuarios').findOneAndUpdate(
             { _id: new ObjectId(userData)},
             { $set: {active: 0 } }
+        );
+
+        return result;
+    },
+
+    async activateUser(userData) {
+        const db = await connect();
+        
+        const result = await db.collection('usuarios').findOneAndUpdate(
+            { _id: new ObjectId(userData)},
+            { $set: {active: 1 } }
+        );
+
+        return result;
+    },
+
+    async deleteUser(userData) {
+        const db = await connect();
+
+        const result = await db.collection('usuarios').deleteOne(
+            { _id: new ObjectId(userData)}
         );
 
         return result;
