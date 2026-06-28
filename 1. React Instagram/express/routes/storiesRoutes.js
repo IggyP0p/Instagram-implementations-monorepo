@@ -1,7 +1,8 @@
 import express from "express";
 const router = express.Router();
-import { createStory } from "../controllers/storiesController.js";
+import storiesController from "../controllers/storiesController.js";
 
-router.post('/stories', createStory);
+router.post('/stories', storiesController.createStory);
+router.delete('/stories/:id', storiesController.deleteStory);
 
 export default router;
