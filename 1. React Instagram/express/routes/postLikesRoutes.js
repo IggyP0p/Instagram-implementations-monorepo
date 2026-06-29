@@ -1,7 +1,8 @@
 import express from "express";
 const router = express.Router();
-import { createLikes } from "../controllers/postLikesController.js";
+import likesController from "../controllers/postLikesController.js";
 
-router.post('/Likes', createLikes);
+router.post('/Likes', likesController.giveLike);
+router.delete('/Likes/:id', likesController.removeLikes);
 
 export default router;
