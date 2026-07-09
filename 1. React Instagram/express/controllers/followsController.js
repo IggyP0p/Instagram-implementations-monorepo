@@ -1,6 +1,8 @@
-import { insertFollows } from "../models/mongodb/follows.js";
+import FollowsModel from "../models/mongodb/follows.js";
 
-export const createFollow = async (req, res) => {
+const FollowsController = {
+
+  async createFollow(req, res) {
     try {
         const { followerId, followingId, createdAt } = req.body;
 
@@ -10,10 +12,26 @@ export const createFollow = async (req, res) => {
             createdAt
         }
 
-        const newFollows = await insertFollows(newFollowsData);
+        const newFollows = await FollowsModel.insertFollows(newFollowsData);
 
         return res.status(201).json(newFollows);
     } catch (error) {
         return res.status(500).json({ error: error.message });
     }
+  },
+
+  // TODO: test this method
+  async retrieveFollows(req, res) {
+    try {
+      const { id } = req.params;
+
+        const newFollows = await FollowsModel.getFollows(id);
+
+        return res.status(201).json(newFollows);
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+  }
 }
+
+export default FollowsController;
