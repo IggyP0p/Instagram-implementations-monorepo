@@ -4,15 +4,15 @@ const api = {
 
   async getPosts() {
     try {
-      const response = await fetch(`${API_URL}/user`);
+      const response = await fetch(`${API_URL}/post`);
 
       if (!response.ok) {
-        throw new Error("Erro ao buscar usuários");
+        throw new Error("Error fetching posts");
       }
 
       return await response.json();
     } catch (error) {
-      console.error("Erro de requisição:", error);
+      console.error("Request error:", error);
       throw error;
     }
   }
