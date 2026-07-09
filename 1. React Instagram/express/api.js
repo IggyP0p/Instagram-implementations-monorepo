@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors"; //AVOID BROWSER TO BLOCK THE REQUESTS
 
 import userRoutes from "./routes/userRoutes.js";
 import storiesRoutes from "./routes/storiesRoutes.js";
@@ -11,6 +12,7 @@ import commentRoutes from "./routes/commentRoutes.js";
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.use("/api", userRoutes);
