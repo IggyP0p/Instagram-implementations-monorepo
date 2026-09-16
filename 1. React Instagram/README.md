@@ -1,5 +1,22 @@
 # React implementation of Instagram clone UI
 
+## Testing
+
+Before be sure to have node.js installed
+The database I am using is MongoDB from Atlas web app
+
+[Installing dependencies]
+**your directory**/1.React Instagram/vite-project$ npm install
+
+[Running app]
+**your directory**/1.React Instagram/vite-project$ npm run dev
+
+
+[Installing dependencies]
+**your directory**/1.React Instagram/express$ npm install
+
+[deploying backend]
+**your directory**/1.React Instagram/express$ node app.js
 
 ## Useful links used
 
@@ -17,18 +34,17 @@
 - [X] Create React Interface
 - [X] Implement Express.js backend
 - [X] Connect with mongoDB
-- [ ] Connect with imagesDB
-- [ ] Use Express API to connect React frontend with Express Backend
-
 
 ## My way on learning React and my thoughts
+
+**This was my very first time trying to make a very organized project. It has been some months since I started cause I was doing it paralel to other projects, so I am a little confused where I stopped. If someone gets to read this, know that this is still very desorganized**
 
 First of all, I tried to maintain the things the more simple as possible. I already had some experience at HTML, CSS and Javascript. So  the syntax wouldnt be a big problem. And I would like to understand "WHAT IS REACT".
 
 To begin things I created a vite web server to allow me to run my React applications. And that's something I searched about to understand in the beggining. "Why I need vite?" "Why I need Node?". First I need Node to run React in my Enviroment, like when I use npm (node package manager). Second I need Vite to create my server to test React and make good optimizations for web.
 
 I can't go through everything detailed here but I will cover somethings I find interesting. The fact that React components are javascript functions therefore you can reutilize them is pretty simple in a logic way, but cool at the same time. the ".jsx" extension is kinda cool
-too. 
+too.
 
 I like how the structure of HTML, CSS is still used here. Cause it make things easier to understand and learn. Now I gonna tell my experience
 on "HOW GOOD IS TO DEVELOP IN REACT", is it a incredible library? Does it makes web development of websites easier than pure HTML, CSS And Javascript?
