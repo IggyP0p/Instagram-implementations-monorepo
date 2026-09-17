@@ -3,6 +3,8 @@
 
 export default function Home() {
    return (
-      <div>Em construção</div>
+      <div className="bg-[#F8F8F8] w-screen h-screen">
+         Em construção
+      </div>
    )
 }
