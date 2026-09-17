@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme inline {
+   --color-instagram-yellow: #FCAF45;
+   --color-instagram-orange: #F77737;
+   --color-instagram-red: #E1306C;
+   --color-instagram-magenta: #C13584;
+   --color-instagram-purple: #833AB4;
+
+
+   --color-background-light: #FFFFFF;
+   --color-foreground-light: #171717;
+}
