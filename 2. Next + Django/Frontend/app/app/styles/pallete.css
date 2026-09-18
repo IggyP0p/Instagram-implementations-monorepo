@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
+
    --color-instagram-yellow: #FCAF45;
    --color-instagram-orange: #F77737;
    --color-instagram-red: #E1306C;

@@ -6,6 +6,11 @@ import {
    User,
    Menu,
    ChevronLeft,
+   CircleAlert,
+   Ellipsis,
+   Bookmark,
+   Send,
+   FaceSlightlySmiling,
 } from "lucide-react";
 
 export function ReturnIcon() {
@@ -127,5 +132,48 @@ export function MenuIcon() {
             strokeWidth={2}
          />
       </div>
+   );
+}
+
+export function AlertIcon() {
+   return (
+      <div>
+         <CircleAlert
+            size={28}
+            strokeWidth={2}
+         />
+     </div>
+   );
+}
+
+export function MoreIcon() {
+   return (
+      <Ellipsis
+         size={28}
+      />
+   );
+}
+
+export function BookIcon() {
+   return (
+      <Bookmark
+         size={28}
+      />
+   );
+}
+
+export function SendIcon() {
+   return (
+      <Send
+         size={28}
+      />
+   );
+}
+
+export function SmilingFaceIcon(){
+   return (
+      <FaceSlightlySmiling
+         size={28}
+      />
    );
 }
