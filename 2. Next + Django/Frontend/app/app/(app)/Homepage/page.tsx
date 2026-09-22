@@ -13,6 +13,8 @@ export default function Home() {
          <div className="flex flex-col items-center">
             <StoriesTray />
             <Post />
+            <Post />
+            <Post />
          </div>
 
          <div className="flex flex-col w-80 mt-14 ml-3">

@@ -12,3 +12,6 @@ In the Database Folder you can find the diagrams to understand the database.
 - [] Connect all layers
 
 # Frontend (Next)
+
+The UI was based on figr.design:
+[Instagram - Web UI (Recreated)](https://www.figma.com/community/file/1235135369163092252/instagram-web-ui-recreated?after-auth-duplicate-file-id=1235135369163092252&fuid=1468939785599770410)
