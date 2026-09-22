@@ -1,7 +1,7 @@
 import Button from "./Button";
 import { formatter } from "../lib/formatter";
 import { HeartIcon, MessageCircleIcon, SendIcon, BookIcon, MoreIcon, SmilingFaceIcon } from "./Icons";
-import StoryIcon from "./StoryIcon";
+import ProfileIcon from "./ProfileIcon";
 import Image from "next/image";
 
 
@@ -9,11 +9,11 @@ const postDescription = formatter.postDescription("Lorem Ipsum is simply dummy t
 
 export default function Post() {
    return (
-      <div className="flex flex-col bg-white w-126 h-auto mb-6 gap-2 overflow-hidden border border-gray-300 rounded-xl shadow-lg">
+      <div className="flex flex-col bg-white w-126 h-auto mb-6 mt-6 gap-2 overflow-hidden border border-gray-300 rounded-xl shadow-lg">
 
          {/* Upper element: user profile, name and options button */}
-         <div className="flex flex-row justify-between items-center pl-2 pr-4 py-2 w-full">
-            <StoryIcon circleSize={13} collapsedName={true} textBold={true}/>
+         <div className="flex flex-row justify-between items-center px-4 py-2 w-full">
+            <ProfileIcon circleSize={50} collapsedName={true} textBold={true}/>
             <MoreIcon/>
          </div>
 
@@ -70,7 +70,7 @@ export default function Post() {
                </Button>
                <input
                   type="text"
-                  className="text-gray-500 p-2 w-full rounded-2xl focus:text-black"
+                  className="text-gray-500 p-2 w-full h-auto rounded-2xl focus:text-black focus:border  focus:border-blue-300"
                   placeholder="Add a comment"
                />
             </div>

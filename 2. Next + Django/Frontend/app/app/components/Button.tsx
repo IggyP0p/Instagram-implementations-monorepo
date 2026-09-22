@@ -17,7 +17,7 @@ const variantStyles: Record<Variant, string> = {
    primary: "inline-flex items-center justify-center px-5 py-2.5 w-full rounded-lg font-bold bg-blue-600 text-white hover:bg-blue-400 hover:shadow-md",
    secondary: "inline-flex items-center justify-center px-5 py-2.5 w-full rounded-lg font-bold bg-gray-700 text-white hover:bg-gray-700/80 hover:shadow-md",
    simple: "text-blue-400",
-   unstyled: "",
+   unstyled: "text-black",
 };
 
 const sizeStyles: Record<Size, string> = {
