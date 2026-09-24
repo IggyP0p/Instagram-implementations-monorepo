@@ -6,12 +6,13 @@ import {
    User,
    Menu,
    ChevronLeft,
+   ChevronDown,
+   ChevronUp,
    CircleAlert,
    Ellipsis,
    Bookmark,
    Send,
    FaceSlightlySmiling,
-   ChevronDown,
    SquarePen,
    Phone,
    Video,
@@ -174,11 +175,23 @@ export function SmilingFaceIcon(){
    );
 }
 
-export function ArrowDown() {
+export function ArrowDown({thisSize = 28, classN = ""}) {
    return (
       <div className="cursor-pointer">
          <ChevronDown
-            size={28}
+            size={thisSize}
+            className={classN}
+         />
+      </div>
+   );
+}
+
+export function ArrowUp({thisSize = 28, classN = ""}) {
+   return (
+      <div className="cursor-pointer">
+         <ChevronUp
+            size={thisSize}
+            className={classN}
          />
       </div>
    );
