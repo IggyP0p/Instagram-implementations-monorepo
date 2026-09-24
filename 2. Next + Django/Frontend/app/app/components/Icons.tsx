@@ -11,6 +11,11 @@ import {
    Bookmark,
    Send,
    FaceSlightlySmiling,
+   ChevronDown,
+   SquarePen,
+   Phone,
+   Video,
+   Image as Imagem,
 } from "lucide-react";
 
 export function ReturnIcon() {
@@ -175,5 +180,55 @@ export function SmilingFaceIcon(){
       <FaceSlightlySmiling
          size={28}
       />
+   );
+}
+
+export function ArrowDown() {
+   return (
+      <div className="cursor-pointer">
+         <ChevronDown
+            size={28}
+         />
+      </div>
+   );
+}
+
+export function EditBox() {
+   return (
+      <div className="cursor-pointer">
+         <SquarePen
+            size={28}
+         />
+      </div>
+   );
+}
+
+export function PhoneIcon() {
+   return (
+      <div className="cursor-pointer">
+         <Phone
+            size={28}
+         />
+      </div>
+   );
+}
+
+export function VideoIcon() {
+   return (
+      <div className="cursor-pointer">
+         <Video
+            size={28}
+         />
+      </div>
+   );
+}
+
+export function ImageIcon() {
+   return (
+      <div className="cursor-pointer">
+         <Imagem
+            size={28}
+         />
+      </div>
    );
 }

@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "simple" | "unstyled";
+type Variant = "primary" | "secondary" | "simple" | "unstyled" | "containerAct" | "containerInact";
 type Size = "none" | "sm" | "md" | "lg";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -18,13 +18,15 @@ const variantStyles: Record<Variant, string> = {
    secondary: "inline-flex items-center justify-center px-5 py-2.5 w-full rounded-lg font-bold bg-gray-700 text-white hover:bg-gray-700/80 hover:shadow-md",
    simple: "text-blue-400",
    unstyled: "text-black",
+   containerAct: "text-black font-semibold border-b-2 border-b-black",
+   containerInact: "text-gray-400 font-semibold",
 };
 
 const sizeStyles: Record<Size, string> = {
    none: "",
    sm: "px-3 py-1.5 text-sm",
    md: "px-4 py-2 text-base",
-   lg: "px-6 py-3 text-lg",
+   lg: "px-6 py-4 text-sm",
 };
 
 export default function Button({
