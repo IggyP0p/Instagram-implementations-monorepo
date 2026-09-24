@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import LoginContainer from "../components/LoginContainer";
+import LoginContainer from "./_components/LoginContainer";
 
 export default function LoginPage() {
   return (

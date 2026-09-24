@@ -1,7 +1,7 @@
-import Button from "./Button";
-import { formatter } from "../lib/formatter";
-import { HeartIcon, MessageCircleIcon, SendIcon, BookIcon, MoreIcon, SmilingFaceIcon } from "./Icons";
-import ProfileIcon from "./ProfileIcon";
+import Button from "@/app/components/Button";
+import { formatter } from "@/app/lib/formatter";
+import { HeartIcon, MessageCircleIcon, SendIcon, BookIcon, MoreIcon, SmilingFaceIcon } from "@/app/components/Icons";
+import ProfileIcon from "@/app/components/ProfileIcon";
 import Image from "next/image";
 
 

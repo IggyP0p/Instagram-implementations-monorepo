@@ -1,4 +1,4 @@
-import ProfileIcon from "./ProfileIcon";
+import ProfileIcon from "@/app/components/ProfileIcon";
 
 export default function StoriesTray() {
    return (

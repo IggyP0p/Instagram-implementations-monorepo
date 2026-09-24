@@ -1,6 +1,6 @@
 "use client"
 
-import SignupForm from "@/app/components/SignupForm";
+import SignupForm from "../_components/SignupForm";
 import { ReturnIcon } from "@/app/components/Icons";
 import { useRouter } from "next/navigation";
 

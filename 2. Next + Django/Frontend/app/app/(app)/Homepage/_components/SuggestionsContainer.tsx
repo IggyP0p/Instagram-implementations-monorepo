@@ -1,5 +1,5 @@
-import Button from "./Button";
-import ProfileIcon from "./ProfileIcon";
+import Button from "@/app/components/Button";
+import ProfileIcon from "@/app/components/ProfileIcon";
 
 interface SuggestionsContainerProps {
    usuario?: string,

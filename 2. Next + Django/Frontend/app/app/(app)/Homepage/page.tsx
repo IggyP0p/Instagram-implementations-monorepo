@@ -1,8 +1,8 @@
 "use client"
 
-import Post from "@/app/components/Post"
-import StoriesTray from "@/app/components/StoriesTray"
-import SuggestionsContainer from "@/app/components/SuggestionsContainer"
+import Post from "./_components/Post"
+import StoriesTray from "./_components/StoriesTray"
+import SuggestionsContainer from "./_components/SuggestionsContainer"
 import ProfileIcon from "@/app/components/ProfileIcon"
 import Button from "@/app/components/Button"
 
