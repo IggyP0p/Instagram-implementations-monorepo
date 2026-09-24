@@ -18,6 +18,7 @@ import {
    Image as Imagem,
    X,
    CircleX,
+   Clapperboard,
 } from "lucide-react";
 
 export function ReturnIcon() {
@@ -62,28 +63,16 @@ export function SearchIcon() {
    );
 }
 
-export function CompassIcon({isActive = false}) {
+export function ReelsIcon({isActive = false}) {
    return (
-       <svg
-         width={28}
-         height={28}
-         viewBox="0 0 24 24"
-         fill="none"
-         stroke="currentColor"
-         strokeWidth="2"
-         strokeLinecap="round"
-         strokeLinejoin="round"
-       >
-         {/* Camada 1: Círculo externo (sempre apenas linha de contorno) */}
-         <circle cx="12" cy="12" r="10" />
-
-         {/* Camada 2: Agulha da bússola (preenche de preto/currentColor se isActive for true) */}
-         <polygon
-           points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"
-           fill={isActive ? "currentColor" : "none"}
+      <div>
+         <Clapperboard
+            size={28}
+            strokeWidth={2}
+            fill={isActive ? "currentColor" : "none"}
          />
-       </svg>
-     );
+      </div>
+   );
 }
 
 export function HeartIcon() {

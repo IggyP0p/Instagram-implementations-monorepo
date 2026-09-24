@@ -6,12 +6,12 @@ interface SearchTabProps {
    onClose: () => void
 }
 
-export default function SearchTab({
+export default function TabSearch({
    onClose
 }: SearchTabProps) {
    return (
       <div
-         className="fixed h-screen w-screen bg-transparent z-50"
+         className="fixed h-screen w-screen bg-transparent"
          onClick={() => onClose()}
       >
          <div

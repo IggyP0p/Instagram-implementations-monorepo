@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import TabSearch from "./TabSearch";
 import TabNotify from "./TabNotify";
+import TabCreate from "./TabCreate";
 import Image from "next/image";
 import Button from "./Button";
 import Link from "next/link";
@@ -11,7 +12,7 @@ import Link from "next/link";
 import {
    HomeIcon,
    SearchIcon,
-   CompassIcon,
+   ReelsIcon,
    HeartIcon,
    MessageCircleIcon,
    PlusSquareIcon,
@@ -29,6 +30,7 @@ export default function Sidebar() {
    const pathname = usePathname();
    const [tabSearch, openTabSearch] = useState(false);
    const [tabNotify, openTabNotify] = useState(false);
+   const [tabCreate, openTabCreate] = useState(false);
 
    return (
       <aside className="fixed top-0 left-0 h-screen w-66 border-r border-r-gray-300 flex flex-col z-50">
@@ -66,8 +68,8 @@ export default function Sidebar() {
                      href="/Reels"
                      className={`${linkStyles}`}
                   >
-                     <CompassIcon isActive={pathname === "/Reels" ? true : false}/>
-                     <span className={pathname === "/Reels" ? "font-bold" : ""}>Explore</span>
+                     <ReelsIcon isActive={pathname === "/Reels" ? true : false}/>
+                     <span className={pathname === "/Reels" ? "font-bold" : ""}>Reels</span>
                   </Link>
                </li>
                <li className={`${liStyles}`}>
@@ -93,6 +95,7 @@ export default function Sidebar() {
                   <Button
                      variant="unstyled"
                      className={`${buttonStyles}`}
+                     onClick={() => openTabCreate(true)}
                   >
                      <PlusSquareIcon/>
                      <span className={`${spanStyles}`}>Create</span>
@@ -127,6 +130,10 @@ export default function Sidebar() {
 
          {tabNotify && (
             <TabNotify onClose={() => openTabNotify(false)}/>
+         )}
+
+         {tabCreate && (
+            <TabCreate onClose={() => openTabCreate(false)}/>
          )}
       </aside>
    )
