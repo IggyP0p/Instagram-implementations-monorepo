@@ -8,7 +8,7 @@ const userButtonStyle = "inline-flex items-center justify-center px-4 py-2.5 w-f
 const photosButtonStyleAct = "text-black font-semibold border-t-2 border-t-black"
 const photosButtonStyleInact = "text-gray-400 font-semibold border-t-2 border-t-transparent hover:text-gray-600 hover:border-t-gray-600 transition-colors"
 
-const imageCoverStyle = "relative h-[38dvh] aspect-14/16 w-auto rounded-sm overflow-hidden"
+const imageCoverStyle = "relative h-[38dvh] aspect-14/16 w-auto rounded-sm overflow-hidden cursor-pointer"
 
 interface ProfilepageProps {
    user?: string,

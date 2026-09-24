@@ -34,13 +34,25 @@ export default function Sidebar() {
 
    return (
       <aside className="fixed top-0 left-0 h-screen w-66 border-r border-r-gray-300 flex flex-col z-50">
-         <Image
-            src="/Instagram_nameLogo.png"
-            alt="Logo Instagram"
-            width={200}
-            height={200}
-            className="p-8 -ml-5 shrink-0"
-         />
+         {(tabSearch || tabNotify) ? (
+
+            <Image
+               src="/instagram_logo.jpeg"
+               alt="Logo Instagram"
+               width={100}
+               height={100}
+               className="p-8 -ml-3 mb-4 shrink-0"
+            />
+         ) : (
+
+            <Image
+               src="/Instagram_nameLogo.png"
+               alt="Logo Instagram"
+               width={200}
+               height={200}
+               className="p-8 -ml-5 shrink-0"
+            />
+         )}
 
          <nav className="flex-1 flex flex-col pb-4">
             <ul className="list-none flex flex-col gap-1 h-full">
