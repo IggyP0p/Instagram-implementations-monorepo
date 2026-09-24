@@ -33,7 +33,7 @@ export default function ProfileIcon({
             <div className={`${hasReels ? "bg-white" : "bg-none"} rounded-full w-full h-full p-0 flex items-center justify-center`}>
 
                {/* Image Container */}
-               <div className={"relative w-full h-full rounded-full overflow-hidden"}>
+               <div className={"relative w-full h-full rounded-full overflow-hidden z-0"}>
                   <Image
                      src="/default_profile_pic.png"
                      alt=""

@@ -16,6 +16,8 @@ import {
    Phone,
    Video,
    Image as Imagem,
+   X,
+   CircleX,
 } from "lucide-react";
 
 export function ReturnIcon() {
@@ -228,6 +230,27 @@ export function ImageIcon() {
       <div className="cursor-pointer">
          <Imagem
             size={28}
+         />
+      </div>
+   );
+}
+
+export function CloseTabIcon() {
+   return (
+      <div className="cursor-pointer">
+         <X
+            size={22}
+         />
+      </div>
+   );
+}
+
+export function CircleCloseTab() {
+   return (
+      <div className="cursor-pointer">
+         <CircleX
+            size={22}
+            color="#A9A9A9"
          />
       </div>
    );

@@ -1,6 +1,9 @@
 "use client"
 
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import TabSearch from "./TabSearch";
+import TabNotify from "./TabNotify";
 import Image from "next/image";
 import Button from "./Button";
 import Link from "next/link";
@@ -24,9 +27,11 @@ const spanStyles = "text-lg font-medium" // Suposed to be used only on button's 
 export default function Sidebar() {
 
    const pathname = usePathname();
+   const [tabSearch, openTabSearch] = useState(false);
+   const [tabNotify, openTabNotify] = useState(false);
 
    return (
-      <aside className="fixed top-0 left-0 h-screen w-66 border-r border-r-gray-300 flex flex-col">
+      <aside className="fixed top-0 left-0 h-screen w-66 border-r border-r-gray-300 flex flex-col z-50">
          <Image
             src="/Instagram_nameLogo.png"
             alt="Logo Instagram"
@@ -50,6 +55,7 @@ export default function Sidebar() {
                   <Button
                      variant="unstyled"
                      className={`${buttonStyles}`}
+                     onClick={() => openTabSearch(true)}
                   >
                      <SearchIcon />
                      <span className={`${spanStyles}`}>Search</span>
@@ -77,6 +83,7 @@ export default function Sidebar() {
                   <Button
                      variant="unstyled"
                      className={`${buttonStyles}`}
+                     onClick={() => openTabNotify(true)}
                   >
                      <HeartIcon/>
                      <span className={`${spanStyles}`}>Notifications</span>
@@ -113,6 +120,14 @@ export default function Sidebar() {
                </li>
             </ul>
          </nav>
+
+         {tabSearch && (
+            <TabSearch onClose={() => openTabSearch(false)}/>
+         )}
+
+         {tabNotify && (
+            <TabNotify onClose={() => openTabNotify(false)}/>
+         )}
       </aside>
    )
 }
