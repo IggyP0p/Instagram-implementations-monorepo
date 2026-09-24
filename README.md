@@ -2,7 +2,11 @@
 
 This project is for educational purposes. In each folder, I explain how I implemented the technologies. The goal is to provide a simple working implementation, so I don’t focus on security issues, validations, or preventing exploits. Instead, I aim for a general project structure with a client-side interface for user interaction, a server-side API that acts as a bridge to the database, and a basic CRUD implementation. For better view take a look at the following image:
 
-![Diagrama sistema](./README.jpg)
+![Diagrama sistema](./README%20photos/Architecture.jpg)
+
+Also there's the ER Diagram for the databases for a guide:
+
+![Diagrama ER](./README%20photos/DB_ER_Diagram.jpg)
 
 Also I leave some comentaries of what I find good or bad for each one.
 
@@ -21,4 +25,3 @@ To see further information go into the folder [REACT Instagram](./1.%20React%20I
 - Database (_PostgreSQL_)
 
 To see further information go into the folder [Next + Django](./2.%20Next%20+%20Django/)
-
