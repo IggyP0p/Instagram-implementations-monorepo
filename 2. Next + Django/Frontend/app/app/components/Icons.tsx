@@ -20,6 +20,7 @@ import {
    X,
    CircleX,
    Clapperboard,
+   Bolt,
 } from "lucide-react";
 
 export function ReturnIcon() {
@@ -253,6 +254,16 @@ export function CircleCloseTab() {
          <CircleX
             size={22}
             color="#A9A9A9"
+         />
+      </div>
+   );
+}
+
+export function ConfigIcon() {
+   return (
+      <div className="cursor-pointer">
+         <Bolt
+            size={28}
          />
       </div>
    );
