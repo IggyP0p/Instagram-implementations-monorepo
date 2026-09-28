@@ -1,90 +1,156 @@
 from .models import User
+from .serializers import *
 from django.db.models import Q
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework_simplejwt.tokens import RefreshToken
 
-@api_view(['POST'])
-def login(request):
 
-   data = request.data
-   login_data = data.get("login_data")
-   password = data.get("password")
+# -------- HTTP POSTS -------- #
 
-   user = User.objects.filter(
-      Q(username=login_data) | Q(email=login_data) | Q(phone=login_data)
-   ).first()
+@api_view(["POST"])
+def register(request):
+   serializer = UserRegisterSerializer(data=request.data)
 
-   if user is None or not user.check_password(password):
+   if serializer.is_valid():
+      user = serializer.save()
+      refresh = RefreshToken.for_user(user)
+
       return Response(
-         {"detail": "Wrong user or password"},
-         status=status.HTTP_401_UNAUTHORIZED
+         {
+               "message": "Register completed!",
+               "user": UserSerializer(user).data,
+               "tokens": {
+                  "refresh": str(refresh),
+                  "access": str(refresh.access_token),
+               },
+         },
+         status=status.HTTP_201_CREATED,
       )
 
-   refresh = RefreshToken.for_user(user)
+   return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-   return Response({
-      "message": "Succesful Login",
-      "user": {
-         "id" : user.id,
-         "username" : user.username
-      },
-      "tokens": {
-         "refresh": str(refresh),
-         "access": str(refresh.access_token),
-      }
-   }, status=status.HTTP_200_OK)
+
+@api_view(["POST"])
+def login(request):
+   serializer = LoginSerializer(data=request.data)
+
+   if serializer.is_valid():
+      user = serializer.validated_data["user"]
+      refresh = RefreshToken.for_user(user)
+
+      return Response(
+         {
+               "message": "Successful Login",
+               "user": UserSerializer(user).data,
+               "tokens": {
+                  "refresh": str(refresh),
+                  "access": str(refresh.access_token),
+               },
+         },
+         status=status.HTTP_200_OK,
+      )
+
+   return Response(serializer.errors, status=status.HTTP_401_UNAUTHORIZED)
 
 
 @api_view(['POST'])
-def register(request):
+def follow_user(request):
+   serializer = FollowerSerializer(data=request.data)
 
-   data = request.data
+   if serializer.is_valid():
 
-   username = data.get("username")
-   password = data.get("password")
-   first_name = data.get("first_name")
-   last_name = data.get("last_name")
+      serializer.save()
+      return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-   email = data.get("email")
-   phone = data.get("phone")
-   birthday = data.get("birthday")
+   return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-   filters = Q(username=username)
-   if email:
-      filters |= Q(email=email)
-   if phone:
-      filters |= Q(phone=phone)
 
-   if User.objects.filter(filters).exists():
+@api_view(['POST'])
+def send_message(request):
+   serializer = MessagesSerializer(data=request.data)
+
+   if serializer.is_valid():
+
+      serializer.save()
+      return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+   return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+# -------- HTTP GETTERS -------- #
+
+@api_view(['GET'])
+def get_user(request, user_id):
+
+   if not user_id:
       return Response(
-         {"erro": "An user with these credentials already exists"},
+         {"detail": "missing parameters"},
          status=status.HTTP_400_BAD_REQUEST
       )
 
-   user = User.objects.create_user(
-           username=username,
-           first_name=first_name,
-           last_name=last_name,
-           phone=phone if phone else "",
-           email=email if email else "",
-           password=password,
-           birthday=birthday,
-       )
+   user = User.objects.get(id=user_id)
 
-   user.save()
+   serializer = UserSerializer(user)
+   return Response(serializer.data, status=status.HTTP_200_OK)
 
-   refresh = RefreshToken.for_user(user)
+
+@api_view(['GET'])
+def get_follow_numbers(request, user_id):
+
+   followers_count = Follow.objects.filter(followed_user=user_id).count()
+
+   following_count = Follow.objects.filter(following_user=user_id).count()
 
    return Response({
-      "message": "Register completed!",
-      "user": {
-         "id" :user.id,
-         "username": user.username,
-      },
-      "tokens": {
-         "refresh": str(refresh),
-         "access": str(refresh.access_token),
-      }
-   }, status=status.HTTP_201_CREATED)
+      "followers_count": followers_count,
+      "following_count": following_count
+   }, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def get_chats(request, user_id):
+
+   receivers = Messages.objects.filter(user_sender=user_id).values_list('user_receiver', flat=True)
+   senders = Messages.objects.filter(user_receiver=user_id).values_list('user_sender', flat=True)
+
+   chat_partners = set(receivers).union(set(senders))
+   chat_partners.discard(int(user_id))
+
+   users = User.objects.filter(id__in=chat_partners)
+
+   serializer = UserPublicSerializer(users, many=True)
+   return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def get_chat_by_id(request, user_id, partner_id):
+
+   messages = Messages.objects.filter(
+      Q(user_sender=user_id, user_receiver=partner_id) |
+      Q(user_sender=partner_id, user_receiver=user_id)
+   ).values('user_sender','content').order_by('id')
+
+   return Response(messages, status=status.HTTP_200_OK)
+
+
+# -------- HTTP PATCH -------- #
+
+
+@api_view(['PATCH'])
+def patch_user_info(request):
+   return Response()
+
+
+# -------- HTTP DELETES -------- #
+
+
+@api_view(['DELETE'])
+def unfollow(request):
+   return Response()
+
+
+@api_view(['DELETE'])
+def delete_Chat(request):
+   return Response()
