@@ -250,3 +250,32 @@ class UserInteractionTest(APITestCase):
 
       self.assertEqual(response2.data[1]['user_sender'], self.user2.id)
       self.assertEqual(response2.data[1]['content'], "Hello, how r u?")
+
+
+   def test_patch_users_info(self):
+      payload = {
+         "first_name": "Barry Allen",
+         "password": "123Barry123Allen",
+         "email": "123BarryA@gmail.com",
+      }
+
+      self.client.force_authenticate(user=self.user)
+
+      response = self.client.patch("/user/", payload, format='json')
+
+      self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+      self.assertEqual(response.data['first_name'], "Barry Allen")
+      self.assertEqual(response.data['email'], "123BarryA@gmail.com")
+
+
+   def test_unfollow(self):
+      response = self.client.delete(f"/user/following/{self.user.id}/{self.user2.id}", format='json')
+
+      self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+
+   def test_delete_user_chat(self):
+      response = self.client.delete(f"/user/messages/{self.user.id}/{self.user2.id}/chat/", format='json')
+
+      self.assertEqual(response.status_code, status.HTTP_200_OK)

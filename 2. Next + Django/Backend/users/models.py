@@ -28,9 +28,6 @@ class Follow(models.Model):
    class Meta:
       unique_together = ("following_user", "followed_user")
 
-   def __str__(self):
-      return f"{self.user.username} segue {self.followed_user.username}"
-
 
 class Messages(models.Model):
 
