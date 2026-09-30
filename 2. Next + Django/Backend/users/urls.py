@@ -5,7 +5,7 @@ urlpatterns = [
 
    # registration, login, create follow, create message routes.
    path('login', views.login, name="login"),
-   path('register', views.register, name="register"),
+   path('register/', views.register, name="register"),
    path('following', views.follow_user, name="following"),
    path('messages', views.send_message, name="messages"),
 
