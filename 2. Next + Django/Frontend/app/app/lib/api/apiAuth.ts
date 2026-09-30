@@ -21,7 +21,7 @@ export const apiAuth = {
 
    async login(data: UserLoginRequest): Promise<UserAuthResponseType> {
       const response = await fetch(`${API_URL}/user/login/`, {
-         method: 'GET',
+         method: 'POST',
          headers: {
             'Content-Type': 'application/json',
          },

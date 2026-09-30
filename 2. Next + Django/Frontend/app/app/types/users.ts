@@ -30,6 +30,6 @@ export interface UserRegisterRequest {
 }
 
 export interface UserLoginRequest {
-   loginData: string,
+   login_data: string,
    password: string,
 }

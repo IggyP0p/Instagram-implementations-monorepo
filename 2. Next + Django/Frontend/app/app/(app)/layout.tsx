@@ -1,7 +1,7 @@
 import Sidebar from "../components/Sidebar";
 import "@/app/styles/globals.css";
 
-export default function appLayout({ children }: LayoutProps<"/">) {
+export default function AppLayout({ children }: LayoutProps<"/">) {
    return (
       <html
          lang="en"

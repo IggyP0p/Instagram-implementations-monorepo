@@ -11,43 +11,43 @@ export default function SignupForm() {
    const router = useRouter();
 
    /* ----- Birthday options config ----- */
-      const [day, setDay] = useState("");
-      const [month, setMonth] = useState("");
-      const [year, setYear] = useState("");
+   const [day, setDay] = useState("");
+   const [month, setMonth] = useState("");
+   const [year, setYear] = useState("");
 
-      const days = Array.from({ length: 31 }, (_, i) => String(i + 1).padStart(2, '0'));
+   const days = Array.from({ length: 31 }, (_, i) => String(i + 1).padStart(2, '0'));
 
-      const months = [
-         { value: '01', label: 'January' },
-         { value: '02', label: 'February' },
-         { value: '03', label: 'March' },
-         { value: '04', label: 'April' },
-         { value: '05', label: 'May' },
-         { value: '06', label: 'June' },
-         { value: '07', label: 'July' },
-         { value: '08', label: 'August' },
-         { value: '09', label: 'September' },
-         { value: '10', label: 'October' },
-         { value: '11', label: 'November' },
-         { value: '12', label: 'December' },
-      ]
+   const months = [
+      { value: '01', label: 'January' },
+      { value: '02', label: 'February' },
+      { value: '03', label: 'March' },
+      { value: '04', label: 'April' },
+      { value: '05', label: 'May' },
+      { value: '06', label: 'June' },
+      { value: '07', label: 'July' },
+      { value: '08', label: 'August' },
+      { value: '09', label: 'September' },
+      { value: '10', label: 'October' },
+      { value: '11', label: 'November' },
+      { value: '12', label: 'December' },
+   ]
 
-      const currentYear = new Date().getFullYear();
-      const years = Array.from({ length: 100 }, (_, i) => String(currentYear - i));
+   const currentYear = new Date().getFullYear();
+   const years = Array.from({ length: 100 }, (_, i) => String(currentYear - i));
 
-      const birthdayInputsStyles = "flex-1 p-2.5 border rounded-sm w-full cursor-pointer outline-none focus:border-transparent text-gray-700 focus:ring-2 focus:ring-blue-200"
+   const birthdayInputsStyles = "flex-1 p-2.5 border rounded-sm w-full cursor-pointer outline-none focus:border-transparent text-gray-700 focus:ring-2 focus:ring-blue-200"
 
    /* ----- Form config ----- */
-      const [isSubmitting, setIsSubmitting] = useState(false);
-      const [showErrors, setShowErrors] = useState({
+   const [isSubmitting, setIsSubmitting] = useState(false);
+   const [showErrors, setShowErrors] = useState({
       username: false,
       password: false,
       name: false,
       KeyUserAttr: false,
       birthday: false,
-      })
+   });
 
-      const ErrorSpanStyles = "text-red-500 font-bold flex flex-row items-center gap-2 text-sm"
+   const ErrorSpanStyles = "text-red-500 font-bold flex flex-row items-center gap-2 text-sm"
 
 
    async function RequestRegister(event: React.FormEvent<HTMLFormElement>) {
@@ -67,9 +67,15 @@ export default function SignupForm() {
          return;
       }
 
-      // Success!
-      console.log('Sucesso:', response.message);
-      console.log('Dados do usuário:', response.data);
+      setIsSubmitting(false);
+
+      if (response.data?.tokens) {
+         document.cookie = `token=${response.data?.tokens.access}; path=/; max-age=86400`;
+         document.cookie = `refresh_token=${response.data?.tokens.refresh}; path=/; max-age=604800`;
+
+         router.refresh();
+      }
+
    }
 
 
