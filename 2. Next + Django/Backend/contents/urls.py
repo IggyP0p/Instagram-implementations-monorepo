@@ -11,5 +11,5 @@ urlpatterns = [
    path('comment/<int:content_id>', views.get_comments, name="get_comments"),
 
    # Delete
-   path('publish/<int:content_id>', views.delete_content, name="Delete_content")
+   path('publish/<int:content_id>/', views.delete_content, name="delete_content")
 ]

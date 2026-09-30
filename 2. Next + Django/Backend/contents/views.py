@@ -4,42 +4,44 @@ from django.db.models import Q
 from rest_framework import status
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
-from rest_framework.decorators import api_view
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.decorators import api_view, permission_classes, parser_classes
 
 
 # -------- HTTP POSTS -------- #
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@parser_classes([MultiPartParser, FormParser])
 def create_content(request):
-   serializer = ContentSerializer(data=request.data)
+    serializer = ContentCreateSerializer(data=request.data)
 
-   if serializer.is_valid():
-      content = serializer.save()
+    if serializer.is_valid():
+        content = serializer.save(owner=request.user)
 
-      return Response({
-         "message": "Published with success!",
-         "content": ContentSerializer(content).data,
-      }, status=status.HTTP_200_OK)
+        return Response({
+            "message": "Published with success!",
+            "content": ContentCreateSerializer(content).data,
+        }, status=status.HTTP_201_CREATED)
 
-   return Response({
-      "error": "It was not possible to Publish",
-   }, status=status.HTTP_400_BAD_REQUEST)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def comment(request):
-   serializer = CommentSerializer(data=request.data)
+    serializer = CommentSerializer(data=request.data)
 
-   if serializer.is_valid():
-      content = serializer.save()
+    if serializer.is_valid():
+        new_comment = serializer.save(source_user=request.user)
 
-      return Response({
-         "message": f"success {CommentSerializer(content).data}",
-      }, status=status.HTTP_200_OK)
+        return Response({
+            "message": "Commented with success!",
+            "comment": CommentSerializer(new_comment).data,
+        }, status=status.HTTP_201_CREATED)
 
-   return Response({
-      "error": "It was not possible to Publish",
-   }, status=status.HTTP_400_BAD_REQUEST)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 # -------- HTTP GETTERS -------- #
@@ -95,7 +97,7 @@ def get_content(request, user_id):
 def get_comments(request, content_id):
 
    comments = Comments.objects.filter(
-      content_id=content_id
+      source_content_type_id=content_id
    ).select_related('source_user').order_by('-likes', 'created_at')
 
    data = [
@@ -118,12 +120,17 @@ def get_comments(request, content_id):
 # -------- HTTP DELETES -------- #
 
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
 def delete_content(request, content_id):
+    content = get_object_or_404(Content, id=content_id)
 
-   content = get_object_or_404(Content, id=content_id)
+    if content.owner != request.user:
+        return Response({
+            "error": "You do not have permission to delete this content."
+        }, status=status.HTTP_403_FORBIDDEN)
 
-   content.delete()
+    content.delete()
 
-   return Response({
-      "message": "content erased with success!"
-   }, status=status.HTTP_200_OK)
+    return Response({
+        "message": "content erased with success!"
+    }, status=status.HTTP_200_OK)
