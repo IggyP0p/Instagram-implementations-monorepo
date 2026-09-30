@@ -45,7 +45,7 @@ def comment(request):
 # -------- HTTP GETTERS -------- #
 
 @api_view(['GET'])
-def get_posts(request, user_id):
+def get_content(request, user_id):
 
    content_type = request.query_params.get('type')
 
