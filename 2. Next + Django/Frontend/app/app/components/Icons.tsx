@@ -133,11 +133,11 @@ export function MenuIcon() {
    );
 }
 
-export function AlertIcon() {
+export function AlertIcon({ iconSize=28 }) {
    return (
       <div>
          <CircleAlert
-            size={28}
+            size={iconSize}
             strokeWidth={2}
          />
      </div>
