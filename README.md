@@ -21,7 +21,15 @@ To see further information go into the folder [REACT Instagram](./1.%20React%20I
 ## Second Implementation
 
 - Frontend (_Next.js_)
-- Backend (_Django / FastAPI_)
+- Backend (_Django_)
 - Database (_PostgreSQL_)
 
 To see further information go into the folder [Next + Django](./2.%20Next%20+%20Django/)
+
+## Third Implementation
+
+- Frontend (_Angular_)
+- Backend (_Java Springboot_)
+- Database (_MySQL_)
+
+To see further information go into the folder [Angular + Springboot](./2.%20Angular%20+%20Springboot/)
