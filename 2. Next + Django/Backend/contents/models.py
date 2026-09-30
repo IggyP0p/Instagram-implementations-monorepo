@@ -1,9 +1,16 @@
 from django.contrib.contenttypes.models import ContentType
-from django.contrib.contenttypes.fields import GenericForeignKey
+from polymorphic.models import PolymorphicModel
 from users.models import User
 from django.db import models
 
-class Content(models.Model):
+
+def upload_content_path(instance, filename):
+   folder = instance.__class__.__name__.lower()
+   user_id = instance.owner.id
+   return f"{user_id}/{folder}/{filename}"
+
+
+class Content(PolymorphicModel):
 
    owner = models.ForeignKey(
       User,
@@ -12,34 +19,23 @@ class Content(models.Model):
    )
 
    content = models.FileField(
+      upload_to=upload_content_path,
       blank=False,
    )
    likes = models.IntegerField(default=0)
    created_at = models.DateTimeField(auto_now_add=True)
 
-   class Meta:
-      abstract = True
-
 
 class Post(Content):
-
-   content = models.FileField(
-      upload_to="posts/",
-   )
+   pass
 
 
 class Reels(Content):
-
-   content = models.FileField(
-      upload_to="reels/",
-   )
+   pass
 
 
 class Stories(Content):
-
-   content = models.FileField(
-      upload_to="stories/",
-   )
+   pass
 
 
 class Comments(models.Model):
@@ -51,17 +47,11 @@ class Comments(models.Model):
    )
 
    source_content_type = models.ForeignKey(
-      ContentType,
+      Content,
       on_delete=models.CASCADE,
-   )
-
-   source_content_id = models.PositiveBigIntegerField()
-
-   source_content = GenericForeignKey(
-      "source_content_type",
-      "source_content_id",
+      related_name="comment",
    )
 
    likes = models.IntegerField(default=0)
-   content = models.CharField(max_length=500)
+   text = models.CharField(max_length=500)
    created_at = models.DateTimeField(auto_now_add=True)
