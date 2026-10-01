@@ -9,7 +9,10 @@ In the Database Folder you can find the diagrams to understand the database.
 - [X] Create apresentation layer Next
 - [X] Create server layer Django
 - [X] Create Database layer
-- [] Connect all layers
+- [X] Connect all layers
+
+At the moment the app can fetch data from frontend to backend, It has all pages, and render it well.
+The app doesn't has a mobile interface, so responsivity doesn't work well.
 
 # Frontend (Next)
 
@@ -20,6 +23,8 @@ The UI was based on figr.design:
 # Backend (Django)
 
 I used the django rest-framework package to create an API that conects the frontend with the database, at the same time it makes some processing, to create the server layer of the application. To learn better how to use Docker as well I used it, so the Database is included in the Dockerfile of the backend.
+
+But I had a problem with Django cause, I didn't find so good to render Html, maybe because I lack experience. Also there's too much classes pre-made. I got a little lost when I was going to use the Framework cause the User for example extends AbstractUser because I was recommended to use it, There is a lot of things already made to use and I didn't know what to do or when I had a problem to solve I did'nt had the acknolegement of how that thing is implemented. So I got a little confused time to time.
 
 
 # My Way on learning Next and DJango

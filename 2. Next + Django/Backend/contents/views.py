@@ -47,7 +47,10 @@ def comment(request):
 # -------- HTTP GETTERS -------- #
 
 @api_view(['GET'])
-def get_content(request, user_id):
+@permission_classes([IsAuthenticated])
+def get_content(request):
+
+   user_id = request.user.id
 
    content_type = request.query_params.get('type')
 
@@ -56,7 +59,7 @@ def get_content(request, user_id):
    ).values_list('following_user_id', flat=True)
 
    if not following_ids:
-      return Response({"error": "No followed users found"}, status=status.HTTP_400_BAD_REQUEST)
+      return Response([], status=status.HTTP_200_OK)
 
    content_qs = Content.objects.filter(
       owner_id__in=following_ids
@@ -71,26 +74,22 @@ def get_content(request, user_id):
 
    contents = content_qs.order_by('-created_at')[:20]
 
-   data = []
-   if contents.exists():
-      for item in contents:
+   data = [
+      {
+         'id': item.id,
+         'contentUrl': item.content.url if item.content else None,
+         'likes': item.likes,
+         'createdAt': item.created_at,
+         'user': {
+            'username': item.owner.username,
+            'first_name': item.owner.first_name,
+            'last_name': item.owner.last_name,
+         }
+      }
+      for item in contents
+   ]
 
-         data.append({
-            'id': item.id,
-            'contentUrl': item.content.url,
-            'likes': item.likes,
-            'createdAt': item.created_at,
-            'user': {
-               'username': item.owner.username,
-               'first_name': item.owner.first_name,
-               'last_name': item.owner.last_name,
-            }
-         })
-      return Response(data, status=status.HTTP_200_OK)
-
-   return Response({
-      "error": "Not found",
-   }, status=status.HTTP_404_NOT_FOUND)
+   return Response(data, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
